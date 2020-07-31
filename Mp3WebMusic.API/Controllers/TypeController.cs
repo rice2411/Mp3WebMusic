@@ -12,6 +12,7 @@ namespace Mp3WebMusic.API.Controllers
         //minhdeptrai1234
         //12h
         //Tín 
+        //ancom
     {
         private readonly ITypeService typeService;
         public TypeController(ITypeService typeService)
