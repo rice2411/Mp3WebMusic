@@ -13,6 +13,7 @@ namespace Mp3WebMusic.API.Controllers
         //12h
         //Tín 
         //ancom
+        // ve thoai
     {
         private readonly ITypeService typeService;
         public TypeController(ITypeService typeService)
