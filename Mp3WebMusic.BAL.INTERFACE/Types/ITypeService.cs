@@ -1,8 +1,7 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse;
-using System;
+﻿using Mp3WebMusic.DOMAIN.Reponse.Types;
 using System.Collections.Generic;
 
-namespace Mp3WebMusic.BAL.INTERFACE
+namespace Mp3WebMusic.BAL.INTERFACE.Types
 {
     public interface ITypeService
     {
