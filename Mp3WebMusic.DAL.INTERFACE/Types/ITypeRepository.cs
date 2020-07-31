@@ -1,4 +1,5 @@
 ﻿using Mp3WebMusic.DOMAIN.Reponse;
+using Mp3WebMusic.DOMAIN.Reponse.Types;
 using System;
 using System.Collections.Generic;
 using System.Text;

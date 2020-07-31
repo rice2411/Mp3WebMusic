@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mp3WebMusic.DOMAIN.Reponse
+namespace Mp3WebMusic.DOMAIN.Reponse.Types
 {
-    class Type
+    public class TypeResult
     {
         public int TypeID { get; set; }
         public string TypeName { get; set; }
-        public bool IsDelete { get; set; }
     }
 }

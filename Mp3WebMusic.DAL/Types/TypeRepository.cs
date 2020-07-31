@@ -1,12 +1,11 @@
 ﻿using Dapper;
 using Mp3WebMusic.DAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse;
-using System;
+using Mp3WebMusic.DOMAIN.Reponse.Types;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Mp3WebMusic.DAL
+namespace Mp3WebMusic.DAL.Types
 {
     public class TypeRepository : BaseRepository, ITypeRepository
     {

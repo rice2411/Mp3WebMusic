@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mp3WebMusic.BAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse;
-using System;
+using Mp3WebMusic.BAL.INTERFACE.Types;
+using Mp3WebMusic.DOMAIN.Reponse.Types;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
 {

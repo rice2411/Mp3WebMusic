@@ -1,19 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Mp3WebMusic.BAL;
-using Mp3WebMusic.BAL.INTERFACE;
-using Mp3WebMusic.DAL;
+using Mp3WebMusic.BAL.INTERFACE.Songs;
+using Mp3WebMusic.BAL.INTERFACE.Types;
+using Mp3WebMusic.BAL.Songs;
+using Mp3WebMusic.BAL.Types;
 using Mp3WebMusic.DAL.INTERFACE;
+using Mp3WebMusic.DAL.INTERFACE.Songs;
+using Mp3WebMusic.DAL.Songs;
+using Mp3WebMusic.DAL.Types;
 
 namespace Mp3WebMusic.API
 {
@@ -32,6 +29,8 @@ namespace Mp3WebMusic.API
             services.AddControllers();
             services.AddTransient<ITypeRepository, TypeRepository>();
             services.AddTransient<ITypeService, TypeService>();
+            services.AddTransient<ISongRepository, SongRepository>();
+            services.AddTransient<ISongService, SongService>();
             services.AddSwaggerGen();
         }
 
