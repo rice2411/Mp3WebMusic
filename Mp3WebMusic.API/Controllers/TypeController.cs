@@ -10,6 +10,7 @@ namespace Mp3WebMusic.API.Controllers
 {
     public class TypeController : Controller
         //minhdeptrai1234
+        //Tín 
     {
         private readonly ITypeService typeService;
         public TypeController(ITypeService typeService)
