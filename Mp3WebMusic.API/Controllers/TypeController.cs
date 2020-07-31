@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Mp3WebMusic.API.Controllers
 {
     public class TypeController : Controller
-        //minhdeptrai
+        //minhdeptrai1234
     {
         private readonly ITypeService typeService;
         public TypeController(ITypeService typeService)
