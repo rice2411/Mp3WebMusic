@@ -13,7 +13,7 @@ namespace Mp3WebMusic.DAL.Types
     public class TypeRepository : BaseRepository, ITypeRepository
     {
 
-        public IList<TypeResult> GetsByType(int typeid)
+        public IList<TypeResult> GetsTypeIsDelete()
         {
             IList<TypeResult> types = SqlMapper.Query<TypeResult>(connection, "TypeGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
             return types;
@@ -26,7 +26,7 @@ namespace Mp3WebMusic.DAL.Types
             return type;
         }
 
-        public IList<TypeResult> GetsTypeIsnotDelete()
+        public IList<TypeResult> GetsTypeIsNotDelete()
         {
             IList<TypeResult> types = SqlMapper.Query<TypeResult>(connection, "TypeGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return types;

@@ -14,7 +14,7 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
         //IList<AuthorResult> GetsAuthorByType(int typeid);
         //IList<AuthorResult> GetsAuthorByTopic(int topicid);
         //IList<AuthorResult> GetsAuthorBySinger(int singerid);
-        IList<AuthorResult> GetsByAuthor(int authorid);
+        IList<AuthorResult> GetsAuthorIsNotDelete();
         AuthorResultById GetAuthorById(int authorid);
         Messages AddAuthor(AddAuthor request);
         Messages DeleteAuthor(DeleteAuthor request);

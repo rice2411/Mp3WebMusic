@@ -40,9 +40,9 @@ namespace Mp3WebMusic.BAL.Songs
         //    return songRepository.GetsSongBySinger(singerid);
         //}
 
-        public IList<AuthorResult> GetsByAuthor(int authorid)
+        public IList<AuthorResult> GetsAuthorIsNotDelete()
         {
-            return authorRepository.GetsByAuthor(authorid);
+            return authorRepository.GetsAuthorIsNotDelete();
         }
 
         public AuthorResultById GetAuthorById(int authorid)

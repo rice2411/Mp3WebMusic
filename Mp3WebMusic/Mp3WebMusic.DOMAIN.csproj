@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Reponse\Singer\" />
-    <Folder Include="Reponse\Topic\" />
+    <Compile Remove="Reponse\Singer\**" />
+    <Compile Remove="Reponse\Topic\**" />
+    <EmbeddedResource Remove="Reponse\Singer\**" />
+    <EmbeddedResource Remove="Reponse\Topic\**" />
+    <None Remove="Reponse\Singer\**" />
+    <None Remove="Reponse\Topic\**" />
   </ItemGroup>
 
 </Project>

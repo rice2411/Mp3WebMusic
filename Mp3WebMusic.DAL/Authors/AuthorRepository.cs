@@ -51,11 +51,10 @@ namespace Mp3WebMusic.DAL.Songs
         //    return songs;
         //}
 
-        public IList<AuthorResult> GetsByAuthor(int authorid)
+        public IList<AuthorResult> GetsAuthorIsNotDelete()
         {
-            DynamicParameters parameters = new DynamicParameters();
-            parameters.Add("@AuthorID", authorid);
-            IList<AuthorResult> authors = SqlMapper.Query<AuthorResult>(connection, "AuthorGetsByAuthor", parameters, commandType: CommandType.StoredProcedure).ToList();
+         
+            IList<AuthorResult> authors = SqlMapper.Query<AuthorResult>(connection, "AuthorGetsIsNotDelete",  commandType: CommandType.StoredProcedure).ToList();
             return authors;
         }
         public AuthorResultById GetAuthorById(int authorid)

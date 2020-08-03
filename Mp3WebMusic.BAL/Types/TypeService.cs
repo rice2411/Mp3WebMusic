@@ -19,13 +19,13 @@ namespace Mp3WebMusic.BAL.Types
             this.typeRepository = typeRepository;
         }
 
-        public IList<TypeResult> GetsTypeIsnotDelete()
+        public IList<TypeResult> GetsTypeIsNotDelete()
         {
-            return typeRepository.GetsTypeIsnotDelete();
+            return typeRepository.GetsTypeIsNotDelete();
         }
-        public IList<TypeResult> GetsByType(int typeid)
+        public IList<TypeResult> GetsTypeIsDelete()
         {
-            return typeRepository.GetsByType(typeid);
+            return typeRepository.GetsTypeIsDelete();
         }
 
         public TypeResultById GetTypeById(int typeid)

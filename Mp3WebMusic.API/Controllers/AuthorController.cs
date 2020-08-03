@@ -54,10 +54,10 @@ namespace Mp3WebMusic.API.Controllers
         //    return songService.GetsSongBySinger(singerid);
         //}
         [HttpGet]
-        [Route("/Api/Author/GetsByAuthor")]
-        public IList<AuthorResult> GetsByAuthor(int authorid)
+        [Route("/Api/Author/GetsAuthorIsNotDelete")]
+        public IList<AuthorResult> GetsAuthorIsNotDelete()
         {
-            return authorService.GetsByAuthor(authorid);
+            return authorService.GetsAuthorIsNotDelete();
         }
 
         [HttpGet]

@@ -7,8 +7,8 @@ namespace Mp3WebMusic.BAL.INTERFACE.Types
 {
     public interface ITypeService
     {
-        IList<TypeResult> GetsTypeIsnotDelete();
-        IList<TypeResult> GetsByType(int typeid);
+        IList<TypeResult> GetsTypeIsNotDelete();
+        IList<TypeResult> GetsTypeIsDelete();
         TypeResultById GetTypeById(int typeid);
         Messages AddType(AddType request);
         Messages DeleteType(DeleteType request);
