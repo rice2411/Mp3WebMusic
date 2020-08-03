@@ -19,7 +19,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpGet]
         [Route("/Api/Type/GetsTypeIsNotDelete")]
-        public IEnumerable<TypeResult> GetsTypeIsnotDelete()
+        public IEnumerable<Typeresult> GetsTypeIsnotDelete()
         {
             return typeService.GetsTypeIsnotDelete();
         }

@@ -5,6 +5,6 @@ namespace Mp3WebMusic.BAL.INTERFACE.Types
 {
     public interface ITypeService
     {
-        IList<TypeResult> GetsTypeIsnotDelete();
+        IList<Typeresult> GetsTypeIsnotDelete();
     }
 }

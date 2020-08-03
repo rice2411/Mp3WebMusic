@@ -11,6 +11,7 @@ namespace Mp3WebMusic.DAL
         protected IDbConnection connection;
         public BaseRepository()
         {
+            //string connectionString = @"Data Source=ghinguyen\ghi;Initial Catalog=Mp3Web;Integrated Security=True";
             string connectionString = @"workstation id=Mp3WebMusic.mssql.somee.com;packet size=4096;user id=Mp3Web_SQLLogin_1;pwd=cwr1m1b89i;data source=Mp3WebMusic.mssql.somee.com;persist security info=False;initial catalog=Mp3WebMusic";
             connection = new SqlConnection(connectionString);
         }

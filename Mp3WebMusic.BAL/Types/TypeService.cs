@@ -17,9 +17,11 @@ namespace Mp3WebMusic.BAL.Types
             this.typeRepository = typeRepository;
         }
 
-        public IList<TypeResult> GetsTypeIsnotDelete()
+        public IList<Typeresult> GetsTypeIsnotDelete()
         {
             return typeRepository.GetsTypeIsnotDelete();
         }
+
+       
     }
 }

@@ -8,6 +8,6 @@ namespace Mp3WebMusic.DAL.INTERFACE
 {
     public interface ITypeRepository
     {
-        IList<TypeResult> GetsTypeIsnotDelete();
+        IList<Typeresult> GetsTypeIsnotDelete();
     }
 }
