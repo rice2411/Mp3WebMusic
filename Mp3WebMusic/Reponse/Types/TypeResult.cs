@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mp3WebMusic.DOMAIN.Reponse.Types
 {
-    public class Typeresult
+    public class TypeResult
     {
         public int TypeID { get; set; }
         public string TypeName { get; set; }

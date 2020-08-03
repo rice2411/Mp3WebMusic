@@ -17,15 +17,15 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpGet]
         [Route("/Api/Type/GetsTypeIsNotDelete")]
-        public IEnumerable<Typeresult> GetsTypeIsnotDelete()
+        public IEnumerable<TypeResult> GetsTypeIsnotDelete()
         {
-            return typeService.GetsTypeIsnotDelete();
+            return typeService.GetsTypeIsNotDelete();
         }
         [HttpGet]
-        [Route("/Api/Type/GetsByType")]
-        public IList<TypeResult> GetsByType(int typeid)
+        [Route("/Api/Type/GetsTypeIsDelete")]
+        public IList<TypeResult> GetsTypeIsDelete()
         {
-            return typeService.GetsByType(typeid);
+            return typeService.GetsTypeIsDelete();
         }
         [HttpGet]
         [Route("/Api/Type/GetTypeById")]
