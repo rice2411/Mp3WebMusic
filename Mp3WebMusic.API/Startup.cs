@@ -33,6 +33,8 @@ namespace Mp3WebMusic.API
             services.AddTransient<ISongService, SongService>();
             services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IAuthorService, AuthorService>();
+            services.AddTransient<ITypeRepository, TypeRepository>();
+            services.AddTransient<ITypeService, TypeService>();
             services.AddSwaggerGen();
         }
 

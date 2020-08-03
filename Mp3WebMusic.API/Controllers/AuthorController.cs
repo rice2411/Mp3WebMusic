@@ -66,12 +66,14 @@ namespace Mp3WebMusic.API.Controllers
         {
             return authorService.GetAuthorById(authorid);
         }
+
         [HttpPost]
         [Route("/Api/Author/AddAuthor")]
         public Messages AddAuthor(AddAuthor request)
         {
             return authorService.AddAuthor(request);
         }
+
         [HttpPost]
         [Route("/Api/Author/DeleteAuthor")]
         public Messages DeleteAuthor(DeleteAuthor request)

@@ -1,16 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mp3WebMusic.BAL.INTERFACE.Types;
+using Mp3WebMusic.DOMAIN.Reponse.Songs;
 using Mp3WebMusic.DOMAIN.Reponse.Types;
+using Mp3WebMusic.DOMAIN.Request.Songs;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.API.Controllers
 {
     public class TypeController : Controller
-        //minhdeptrai1234
-        //12h
-        //Tín 
-        //ancom
-        // ve thoai
+        
     {
         private readonly ITypeService typeService;
         public TypeController(ITypeService typeService)
@@ -23,6 +21,42 @@ namespace Mp3WebMusic.API.Controllers
         {
             return typeService.GetsTypeIsnotDelete();
         }
-       
+        [HttpGet]
+        [Route("/Api/Type/GetsByType")]
+        public IList<TypeResult> GetsByType(int typeid)
+        {
+            return typeService.GetsByType(typeid);
+        }
+        [HttpGet]
+        [Route("/Api/Type/GetTypeById")]
+        public TypeResultById GetTypeById(int typeid)
+        {
+            return typeService.GetTypeById(typeid);
+        }
+        [HttpPost]
+        [Route("/Api/Type/AddType")]
+        public Messages AddType(AddType request)
+        {
+            return typeService.AddType(request);
+        }
+
+        [HttpPost]
+        [Route("/Api/Type/DeleteType")]
+        public Messages DeleteType(DeleteType request)
+        {
+            return typeService.DeleteType(request);
+        }
+        [HttpPost]
+        [Route("/Api/Type/EditType")]
+        public Messages EditType(EditType request)
+        {
+            return typeService.EditType(request);
+        }
+        [HttpPost]
+        [Route("/Api/Type/RestoreType")]
+        public Messages RestoreType(RestoreType request)
+        {
+            return typeService.RestoreType(request);
+        }
     }
 }

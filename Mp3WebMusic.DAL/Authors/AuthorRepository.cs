@@ -71,13 +71,7 @@ namespace Mp3WebMusic.DAL.Songs
             {
 
                 DynamicParameters parameters = new DynamicParameters();
-                //parameters.Add("@SongName", request.SongName);
-                //parameters.Add("@Audio", request.Audio);
-                //parameters.Add("@Poster", request.Poster);
-                //parameters.Add("@TypeID", request.TypeID);
-                //parameters.Add("@TopicID", request.TopicID);
-                //parameters.Add("@SingerNickName", request.SingerNickName);
-                //parameters.Add("@AuthorName", request.AuthorName);
+                
 
                 parameters.Add("@AuthorName", request.AuthorName);
                 parameters.Add("@Avatar", request.Avatar);
