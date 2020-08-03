@@ -12,17 +12,13 @@ using System.Threading.Tasks;
 namespace Mp3WebMusic.API.Controllers
 {
     public class SongController : Controller
-        //minhdeptrai1234
-        //12h
-        //Tín 
-        //ancom
-        // ve thoai
     {
         private readonly ISongService songService;
         public SongController(ISongService songService)
         {
             this.songService = songService;
         }
+        #region Song
         [HttpGet]
         [Route("/Api/Song/GetsSongTrending")]
         public IEnumerable<SongResult> GetsSongTrending()
@@ -96,7 +92,7 @@ namespace Mp3WebMusic.API.Controllers
         {
             return songService.RestoreSong(request);
         }
-       
+        #endregion
 
     }
 }
