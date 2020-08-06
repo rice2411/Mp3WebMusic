@@ -4,12 +4,18 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mp3WebMusic.BAL.INTERFACE.Songs;
+using Mp3WebMusic.BAL.INTERFACE.Topics;
 using Mp3WebMusic.BAL.INTERFACE.Types;
+using Mp3WebMusic.BAL.Singers;
 using Mp3WebMusic.BAL.Songs;
+using Mp3WebMusic.BAL.Topics;
 using Mp3WebMusic.BAL.Types;
 using Mp3WebMusic.DAL.INTERFACE;
+using Mp3WebMusic.DAL.INTERFACE.Singers;
 using Mp3WebMusic.DAL.INTERFACE.Songs;
+using Mp3WebMusic.DAL.Singers;
 using Mp3WebMusic.DAL.Songs;
+using Mp3WebMusic.DAL.Topics;
 using Mp3WebMusic.DAL.Types;
 
 namespace Mp3WebMusic.API
@@ -31,6 +37,13 @@ namespace Mp3WebMusic.API
             services.AddTransient<ITypeService, TypeService>();
             services.AddTransient<ISongRepository, SongRepository>();
             services.AddTransient<ISongService, SongService>();
+            services.AddTransient<IAuthorRepository, AuthorRepository>();
+            services.AddTransient<IAuthorService, AuthorService>();
+     
+            services.AddTransient<ITopicRepository, TopicRepository>();
+            services.AddTransient<ITopicService, TopicService>();
+            services.AddTransient<ISingerRepository, SingerRepository>();
+            services.AddTransient<ISingerService, SingerService>();
             services.AddSwaggerGen();
         }
 

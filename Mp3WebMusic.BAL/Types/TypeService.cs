@@ -3,7 +3,9 @@ using Mp3WebMusic.BAL.INTERFACE.Songs;
 using Mp3WebMusic.BAL.INTERFACE.Types;
 using Mp3WebMusic.DAL.INTERFACE;
 using Mp3WebMusic.DOMAIN.Reponse;
+using Mp3WebMusic.DOMAIN.Reponse.Songs;
 using Mp3WebMusic.DOMAIN.Reponse.Types;
+using Mp3WebMusic.DOMAIN.Request.Songs;
 using System;
 using System.Collections.Generic;
 
@@ -17,9 +19,35 @@ namespace Mp3WebMusic.BAL.Types
             this.typeRepository = typeRepository;
         }
 
-        public IList<TypeResult> GetsTypeIsnotDelete()
+        public IList<TypeResult> GetsTypeIsNotDelete()
         {
-            return typeRepository.GetsTypeIsnotDelete();
+            return typeRepository.GetsTypeIsNotDelete();
+        }
+        public IList<TypeResult> GetsTypeIsDelete()
+        {
+            return typeRepository.GetsTypeIsDelete();
+        }
+
+        public TypeResultById GetTypeById(int typeid)
+        {
+            return typeRepository.GetTypeById(typeid);
+        }
+
+        public Messages AddType(AddType request)
+        {
+            return typeRepository.AddType(request);
+        }
+        public Messages DeleteType(DeleteType request)
+        {
+            return typeRepository.DeleteType(request);
+        }
+        public Messages EditType(EditType request)
+        {
+            return typeRepository.EditType(request);
+        }
+        public Messages RestoreType(RestoreType request)
+        {
+            return typeRepository.RestoreType(request);
         }
     }
 }
