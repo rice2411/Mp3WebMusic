@@ -39,11 +39,10 @@ namespace Mp3WebMusic.API
             services.AddTransient<ISongService, SongService>();
             services.AddTransient<IAuthorRepository, AuthorRepository>();
             services.AddTransient<IAuthorService, AuthorService>();
-     
             services.AddTransient<ITopicRepository, TopicRepository>();
             services.AddTransient<ITopicService, TopicService>();
             services.AddTransient<ISingerRepository, SingerRepository>();
-            services.AddTransient<ISingerService, SingerService>();
+            services.AddTransient<ISingerService, SingerService>(); 
             services.AddSwaggerGen();
         }
 
