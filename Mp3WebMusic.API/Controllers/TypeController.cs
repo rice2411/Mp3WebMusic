@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 namespace Mp3WebMusic.API.Controllers
 {
+    [ApiController]
     public class TypeController : Controller
         
     {

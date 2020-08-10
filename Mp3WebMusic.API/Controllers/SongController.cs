@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
 {
+    [ApiController]
     public class SongController : Controller
     {
         private readonly ISongService songService;

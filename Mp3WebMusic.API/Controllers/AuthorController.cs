@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
 {
+    [ApiController]
     public class AuthorController
     {
         
