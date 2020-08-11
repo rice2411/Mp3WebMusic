@@ -58,17 +58,17 @@ namespace Mp3WebMusic.BAL.Songs
         {
             return songRepository.AddSong(request);
         }
-        public Messages DeleteSong(DeleteSong request)
+        public Messages DeleteSong(int id )
         {
-            return songRepository.DeleteSong(request);
+            return songRepository.DeleteSong(id);
         }
         public Messages EditSong(EditSong request)
         {
             return songRepository.EditSong(request);
         }
-        public Messages RestoreSong(RestoreSong request)
+        public Messages RestoreSong(int id)
         {
-            return songRepository.RestoreSong(request);
+            return songRepository.RestoreSong(id);
         }
     }
 }

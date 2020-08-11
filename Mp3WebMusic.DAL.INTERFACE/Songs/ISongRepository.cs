@@ -18,8 +18,8 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
         IList<SongResult> GetsSongByAuthor(int authorid);
         SongResultById GetSongById(int songid);
         Messages AddSong(AddSong request);
-        Messages DeleteSong(DeleteSong request);
+        Messages DeleteSong(int id);
         Messages EditSong(EditSong request);
-        Messages RestoreSong(RestoreSong request);
+        Messages RestoreSong(int id);
     }
 }
