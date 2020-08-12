@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Mp3WebMusic.DOMAIN.Reponse.Types
+namespace Mp3WebMusic.DOMAIN.Request.Type
 {
     public class Types
     {
@@ -10,5 +10,6 @@ namespace Mp3WebMusic.DOMAIN.Reponse.Types
         public string TypeName { get; set; }
         public bool IsDelete { get; set; }
         public string Message { get; set; }
+        public string Poster { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Topics;
-using Mp3WebMusic.DOMAIN.Request.Topics;
-using System;
+﻿using Mp3WebMusic.DOMAIN.Request.Topics;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.DAL.INTERFACE
@@ -16,8 +12,8 @@ namespace Mp3WebMusic.DAL.INTERFACE
         Task<Topic> Get(int TopicID); 
         Task<Topic> Delete(int id);
         Task<Topic> Restore(int id);
-        Task<Topic> Add( AddTopicRequest request);
-        Task<Topic> Edit(EditTopicRequest request);
+        Task<Topic> Add(Topic request);
+        Task<Topic> Edit(Topic request);
 
     }
 }

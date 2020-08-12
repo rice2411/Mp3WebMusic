@@ -1,10 +1,7 @@
 ﻿using Mp3WebMusic.BAL.INTERFACE.Topics;
 using Mp3WebMusic.DAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse.Topics;
 using Mp3WebMusic.DOMAIN.Request.Topics;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.BAL.Topics
@@ -34,12 +31,12 @@ namespace Mp3WebMusic.BAL.Topics
             return await topicRepository.Delete(request);
         }
 
-        public async Task<Topic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(Topic request)
         {
             return await topicRepository.Add(request);
         }
 
-        public  async Task<Topic> Edit(EditTopicRequest request)
+        public  async Task<Topic> Edit(Topic request)
         {
             return await topicRepository.Edit(request);
         }

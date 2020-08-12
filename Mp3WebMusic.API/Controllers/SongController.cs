@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Mp3WebMusic.BAL.INTERFACE;
 using Mp3WebMusic.BAL.INTERFACE.Songs;
-using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
 using Mp3WebMusic.DOMAIN.Request.Songs;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
 {
@@ -71,7 +65,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Song/AddSong")]
-        public Song AddSong(AddSong request)
+        public Song AddSong(Song request)
         {
             return songService.AddSong(request);
         }
@@ -83,7 +77,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Song/EditSong")]
-        public Song EditSong(EditSong request)
+        public Song EditSong(Song request)
         {
             return songService.EditSong(request);
         }

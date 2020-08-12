@@ -1,8 +1,6 @@
 ﻿using Dapper;
 using Mp3WebMusic.DAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Reponse.Types;
-using Mp3WebMusic.DOMAIN.Request.Songs;
+using Mp3WebMusic.DOMAIN.Request.Type;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -31,7 +29,7 @@ namespace Mp3WebMusic.DAL.Type
             IList<Types> types = SqlMapper.Query<Types>(connection, "TypeGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return types;
         }
-        public Types AddType(AddType request)
+        public Types AddType(Types request)
         {
             try
             {
@@ -40,7 +38,7 @@ namespace Mp3WebMusic.DAL.Type
 
 
                 parameters.Add("@TypeName", request.TypeName);
-                parameters.Add("@TypeID", request.TypeID);
+                parameters.Add("@Poster", request.Poster);
 
 
                 var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeAdd", parameters, commandType: CommandType.StoredProcedure);
@@ -71,7 +69,7 @@ namespace Mp3WebMusic.DAL.Type
                 };
             }
         }
-        public Types EditType(EditType request)
+        public Types EditType(Types request)
         {
             try
             {
@@ -79,7 +77,7 @@ namespace Mp3WebMusic.DAL.Type
                 parameters.Add("@TypeID", request.TypeID);
                 parameters.Add("@TypeName", request.TypeName);
 
-
+                parameters.Add("@Poster", request.Poster);
 
                 var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeEdit", parameters, commandType: CommandType.StoredProcedure);
                 return model;

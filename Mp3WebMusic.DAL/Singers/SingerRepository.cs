@@ -1,18 +1,17 @@
 ﻿using Dapper;
 using Mp3WebMusic.DAL.INTERFACE.Singers;
-using Mp3WebMusic.DOMAIN.Reponse.Singers;
+using Mp3WebMusic.DOMAIN.Request.Singers;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.DAL.Singers
 {
     public class SingerRepository :BaseRepository, ISingerRepository
     {
-        public async Task<Singer> Add(AddSingerRequest request)
+        public async Task<Singer> Add(Singer request)
         {
             try
             {
@@ -57,7 +56,7 @@ namespace Mp3WebMusic.DAL.Singers
 
         }
 
-        public async Task<Singer> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(Singer request)
         {
             try
             {

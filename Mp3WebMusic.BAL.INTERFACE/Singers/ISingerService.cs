@@ -1,12 +1,10 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse.Singers;
-using System;
+﻿using Mp3WebMusic.DOMAIN.Request.Singers;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.DAL.INTERFACE.Singers
 {
-     public interface ISingerService
+    public interface ISingerService
     {
         Task<IList<Singer>> GetsSingerIsNotDelete();
         Task<IList<Singer>> GetsSingerIsDelete();
@@ -15,7 +13,7 @@ namespace Mp3WebMusic.DAL.INTERFACE.Singers
         Task<Singer> Delete(int request);
         Task<Singer> Restore(int request);
 
-        Task<Singer> Add(AddSingerRequest request);
-        Task<Singer> Edit(EditSingerRequest request);
+        Task<Singer> Add(Singer request);
+        Task<Singer> Edit(Singer request);
     }
 }

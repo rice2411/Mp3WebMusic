@@ -17,9 +17,9 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
         IList<Song> GetsSongBySinger(int singerid);
         IList<Song> GetsSongByAuthor(int authorid);
         Song GetSongById(int songid);
-        Song AddSong(AddSong request);
+        Song AddSong(Song request);
         Song DeleteSong(int id);
-        Song EditSong(EditSong request);
+        Song EditSong(Song request);
         Song RestoreSong(int id);
     }
 }

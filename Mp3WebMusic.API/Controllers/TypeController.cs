@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mp3WebMusic.BAL.INTERFACE.Type;
-
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Reponse.Types;
-using Mp3WebMusic.DOMAIN.Request.Songs;
+using Mp3WebMusic.DOMAIN.Request.Type;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.API.Controllers
@@ -37,7 +34,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Type/AddType")]
-        public Types AddType(AddType request)
+        public Types AddType(Types request)
         {
             return typeService.AddType(request);
         }
@@ -50,7 +47,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Type/EditType")]
-        public Types EditType(EditType request)
+        public Types EditType(Types request)
         {
             return typeService.EditType(request);
         }

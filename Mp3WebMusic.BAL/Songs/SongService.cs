@@ -1,11 +1,6 @@
-﻿using Mp3WebMusic.BAL.INTERFACE;
-using Mp3WebMusic.BAL.INTERFACE.Songs;
-using Mp3WebMusic.DAL.INTERFACE;
+﻿using Mp3WebMusic.BAL.INTERFACE.Songs;
 using Mp3WebMusic.DAL.INTERFACE.Songs;
-using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
 using Mp3WebMusic.DOMAIN.Request.Songs;
-using System;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.BAL.Songs
@@ -54,7 +49,7 @@ namespace Mp3WebMusic.BAL.Songs
             return songRepository.GetSongById(songid);
         }
 
-        public Song AddSong(AddSong request)
+        public Song AddSong(Song request)
         {
             return songRepository.AddSong(request);
         }
@@ -62,7 +57,7 @@ namespace Mp3WebMusic.BAL.Songs
         {
             return songRepository.DeleteSong(id);
         }
-        public Song EditSong(EditSong request)
+        public Song EditSong(Song request)
         {
             return songRepository.EditSong(request);
         }

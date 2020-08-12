@@ -1,9 +1,5 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Request.Songs;
-using System;
+﻿using Mp3WebMusic.DOMAIN.Request.Songs;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Mp3WebMusic.DAL.INTERFACE.Songs
 {
@@ -13,9 +9,9 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
 
         IList<Author> GetsAuthorIsNotDelete();
         Author GetAuthorById(int authorid);
-        Author AddAuthor(AddAuthor request);
+        Author AddAuthor(Author request);
         Author DeleteAuthor(int request);
-        Author EditAuthor(EditAuthor request);
+        Author EditAuthor(Author request);
         Author RestoreAuthor(int request);
     }
 }

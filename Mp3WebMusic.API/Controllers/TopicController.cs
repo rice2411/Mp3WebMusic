@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mp3WebMusic.BAL.INTERFACE.Topics;
-using Mp3WebMusic.DOMAIN.Reponse.Topics;
 using Mp3WebMusic.DOMAIN.Request.Topics;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
@@ -37,13 +34,13 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Topic/Add")]
-        public async Task<Topic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(Topic request)
         {
             return await topicService.Add(request);
         }
         [HttpPost]
         [Route("/Api/Topic/Edit")]
-        public async Task<Topic> Edit(EditTopicRequest request)
+        public async Task<Topic> Edit(Topic request)
         {
             return await topicService.Edit(request);
         }

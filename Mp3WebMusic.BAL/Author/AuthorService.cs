@@ -34,7 +34,7 @@ namespace Mp3WebMusic.BAL.Songs
             return authorRepository.GetAuthorById(authorid);
         }
 
-        public Author AddAuthor(AddAuthor request)
+        public Author AddAuthor(Author request)
         {
             return authorRepository.AddAuthor(request);
         }
@@ -42,7 +42,7 @@ namespace Mp3WebMusic.BAL.Songs
         {
             return authorRepository.DeleteAuthor(request);
         }
-        public Author EditAuthor(EditAuthor request)
+        public Author EditAuthor(Author request)
         {
             return authorRepository.EditAuthor(request);
         }

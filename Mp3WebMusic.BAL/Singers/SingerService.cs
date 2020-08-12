@@ -1,8 +1,6 @@
 ﻿using Mp3WebMusic.DAL.INTERFACE.Singers;
-using Mp3WebMusic.DOMAIN.Reponse.Singers;
-using System;
+using Mp3WebMusic.DOMAIN.Request.Singers;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.BAL.Singers
@@ -14,7 +12,7 @@ namespace Mp3WebMusic.BAL.Singers
         {
             this.singerRepository = singerRepository;
         }
-        public async Task<Singer> Add(AddSingerRequest request)
+        public async Task<Singer> Add(Singer request)
         {
             return await singerRepository.Add(request);
         }
@@ -24,7 +22,7 @@ namespace Mp3WebMusic.BAL.Singers
             return await singerRepository.Delete(request);
         }
 
-        public async Task<Singer> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(Singer request)
         {
             return await singerRepository.Edit(request);
         }

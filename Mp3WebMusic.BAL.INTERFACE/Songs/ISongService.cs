@@ -1,7 +1,4 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Request.Songs;
-using System;
+﻿using Mp3WebMusic.DOMAIN.Request.Songs;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.BAL.INTERFACE.Songs
@@ -16,9 +13,9 @@ namespace Mp3WebMusic.BAL.INTERFACE.Songs
         IList<Song> GetsSongBySinger(int singerid);
         IList<Song> GetsSongByAuthor(int authorid);
         Song GetSongById(int songid);
-        Song AddSong(AddSong request);
+        Song AddSong(Song request);
         Song DeleteSong(int id );
-        Song EditSong(EditSong request);
+        Song EditSong(Song request);
         Song RestoreSong(int id);
     }
 }

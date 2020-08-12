@@ -21,7 +21,7 @@ namespace Mp3WebMusic.DAL.Topics
 
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@TopicName", request.TopicName);
-               
+                parameters.Add("@Poster", request.Poster);
                 var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
@@ -63,6 +63,7 @@ namespace Mp3WebMusic.DAL.Topics
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@TopicName", request.TopicName);
                 parameters.Add("@TopicID", request.TopicID);
+                parameters.Add("@Poster", request.Poster);
 
                 var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicEdit", parameters, commandType: CommandType.StoredProcedure);
                 return  model;

@@ -1,13 +1,7 @@
-﻿using Mp3WebMusic.BAL.INTERFACE;
-using Mp3WebMusic.BAL.INTERFACE.Songs;
-using Mp3WebMusic.BAL.INTERFACE.Type;
+﻿using Mp3WebMusic.BAL.INTERFACE.Type;
 
 using Mp3WebMusic.DAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Reponse.Types;
-using Mp3WebMusic.DOMAIN.Request.Songs;
-using System;
+using Mp3WebMusic.DOMAIN.Request.Type;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.BAL.Type
@@ -34,7 +28,7 @@ namespace Mp3WebMusic.BAL.Type
             return typeRepository.GetTypeById(typeid);
         }
 
-        public Types AddType(AddType request)
+        public Types AddType(Types request)
         {
             return typeRepository.AddType(request);
         }
@@ -42,7 +36,7 @@ namespace Mp3WebMusic.BAL.Type
         {
             return typeRepository.DeleteType(request);
         }
-        public Types EditType(EditType request)
+        public Types EditType(Types request)
         {
             return typeRepository.EditType(request);
         }

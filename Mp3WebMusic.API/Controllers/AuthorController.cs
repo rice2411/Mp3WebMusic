@@ -42,7 +42,7 @@ namespace Mp3WebMusic.API.Controllers
 
         [HttpPost]
         [Route("/Api/Author/AddAuthor")]
-        public Author AddAuthor(AddAuthor request)
+        public Author AddAuthor(Author request)
         {
             return authorService.AddAuthor(request);
         }
@@ -55,7 +55,7 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Author/EditAuthor")]
-        public Author EditAuthor(EditAuthor request)
+        public Author EditAuthor(Author request)
         {
             return authorService.EditAuthor(request);
         }

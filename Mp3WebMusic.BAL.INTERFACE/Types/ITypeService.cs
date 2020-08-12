@@ -1,6 +1,4 @@
-﻿using Mp3WebMusic.DOMAIN.Reponse.Songs;
-using Mp3WebMusic.DOMAIN.Reponse.Types;
-using Mp3WebMusic.DOMAIN.Request.Songs;
+﻿using Mp3WebMusic.DOMAIN.Request.Type;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.BAL.INTERFACE.Type
@@ -10,9 +8,9 @@ namespace Mp3WebMusic.BAL.INTERFACE.Type
         IList<Types> GetsTypeIsNotDelete();
         IList<Types> GetsTypeIsDelete();
         Types GetTypeById(int typeid);
-        Types AddType(AddType request);
+        Types AddType(Types request);
         Types DeleteType(int request);
-        Types EditType(EditType request);
+        Types EditType(Types request);
         Types RestoreType(int request);
     }
 }

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Mp3WebMusic.DAL.INTERFACE.Singers;
-using Mp3WebMusic.DOMAIN.Reponse.Singers;
-using System;
+using Mp3WebMusic.DOMAIN.Request.Singers;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.API.Controllers
@@ -37,13 +35,13 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpPost]
         [Route("/Api/Singer/Add")]
-        public async Task<Singer> Add(AddSingerRequest request)
+        public async Task<Singer> Add(Singer request)
         {
             return await singerService.Add(request);
         }
         [HttpPost]
         [Route("/Api/Singer/Edit")]
-        public async Task<Singer> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(Singer request)
         {
             return await singerService.Edit(request);
         }

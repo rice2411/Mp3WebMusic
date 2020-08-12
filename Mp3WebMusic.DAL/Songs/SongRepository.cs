@@ -1,8 +1,5 @@
 ﻿using Dapper;
-using Mp3WebMusic.DAL.INTERFACE;
 using Mp3WebMusic.DAL.INTERFACE.Songs;
-using Mp3WebMusic.DOMAIN.Reponse;
-using Mp3WebMusic.DOMAIN.Reponse.Songs;
 using Mp3WebMusic.DOMAIN.Request.Songs;
 using System;
 using System.Collections.Generic;
@@ -66,7 +63,7 @@ namespace Mp3WebMusic.DAL.Songs
             Song song = SqlMapper.Query<Song>(connection, "SongGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return song;
         }
-        public Song AddSong(AddSong request)
+        public Song AddSong(Song request)
         {
             try
             {
@@ -107,7 +104,7 @@ namespace Mp3WebMusic.DAL.Songs
                 };
             }
         }
-        public Song EditSong(EditSong request)
+        public Song EditSong(Song request)
         {
             try
             {
