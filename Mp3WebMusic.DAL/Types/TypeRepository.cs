@@ -8,30 +8,30 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Mp3WebMusic.DAL.Types
+namespace Mp3WebMusic.DAL.Type
 {
     public class TypeRepository : BaseRepository, ITypeRepository
     {
 
-        public IList<TypeResult> GetsTypeIsDelete()
+        public IList<Types> GetsTypeIsDelete()
         {
-            IList<TypeResult> types = SqlMapper.Query<TypeResult>(connection, "TypeGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Types> types = SqlMapper.Query<Types>(connection, "TypeGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
             return types;
         }
-        public TypeResultById GetTypeById(int typeid)
+        public Types GetTypeById(int typeid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@TypeID", typeid);
-            TypeResultById type = SqlMapper.Query<TypeResultById>(connection, "TypeGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            Types type = SqlMapper.Query<Types>(connection, "TypeGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return type;
         }
 
-        public IList<TypeResult> GetsTypeIsNotDelete()
+        public IList<Types> GetsTypeIsNotDelete()
         {
-            IList<TypeResult> types = SqlMapper.Query<TypeResult>(connection, "TypeGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Types> types = SqlMapper.Query<Types>(connection, "TypeGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return types;
         }
-        public Messages AddType(AddType request)
+        public Types AddType(AddType request)
         {
             try
             {
@@ -43,35 +43,35 @@ namespace Mp3WebMusic.DAL.Types
                 parameters.Add("@TypeID", request.TypeID);
 
 
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "TypeAdd", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Types()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages DeleteType(DeleteType request)
+        public Types DeleteType(int request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@TypeID", request.TypeID);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "TypeDelete", parameters, commandType: CommandType.StoredProcedure);
+                parameters.Add("@TypeID", request);
+                var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Types()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages EditType(EditType request)
+        public Types EditType(EditType request)
         {
             try
             {
@@ -81,31 +81,31 @@ namespace Mp3WebMusic.DAL.Types
 
 
 
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "TypeEdit", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeEdit", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Types()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages RestoreType(RestoreType request)
+        public Types RestoreType(int request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@TypeID", request.TypeID);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "TypeRestore", parameters, commandType: CommandType.StoredProcedure);
+                parameters.Add("@TypeID", request);
+                var model = SqlMapper.QueryFirstOrDefault<Types>(connection, "TypeRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Types()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }

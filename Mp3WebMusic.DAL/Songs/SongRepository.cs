@@ -13,60 +13,60 @@ namespace Mp3WebMusic.DAL.Songs
 {
     public class SongRepository : BaseRepository, ISongRepository
     {
-        public IList<SongResult> GetsSongTrending()
+        public IList<Song> GetsSongTrending()
         {
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsTrending", commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsTrending", commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
-        public IList<SongResult> GetsSongIsDelete()
+        public IList<Song> GetsSongIsDelete()
         {
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
-        public IList<SongResult> GetsSongByUpLoadday()
+        public IList<Song> GetsSongByUpLoadday()
         {
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByUpLoadDay", commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByUpLoadDay", commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
-        public IList<SongResult> GetsSongByType(int typeid)
+        public IList<Song> GetsSongByType(int typeid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@TypeID", typeid);
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByType", parameters, commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByType", parameters, commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
-        public IList<SongResult> GetsSongByTopic(int topicid)
+        public IList<Song> GetsSongByTopic(int topicid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@TopicID", topicid);
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByTopic", parameters, commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByTopic", parameters, commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
 
-        public IList<SongResult> GetsSongBySinger(int singerid)
+        public IList<Song> GetsSongBySinger(int singerid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@SingerID", singerid);
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsBySinger", parameters, commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsBySinger", parameters, commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
 
-        public IList<SongResult> GetsSongByAuthor(int authorid)
+        public IList<Song> GetsSongByAuthor(int authorid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@AuthorID", authorid);
-            IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByAuthor", parameters, commandType: CommandType.StoredProcedure).ToList();
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByAuthor", parameters, commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
 
-        public SongResultById GetSongById(int songid)
+        public Song GetSongById(int songid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@SongID", songid);
-            SongResultById song = SqlMapper.Query<SongResultById>(connection, "SongGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            Song song = SqlMapper.Query<Song>(connection, "SongGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return song;
         }
-        public Messages AddSong(AddSong request)
+        public Song AddSong(AddSong request)
         {
             try
             {
@@ -79,35 +79,35 @@ namespace Mp3WebMusic.DAL.Songs
                 parameters.Add("@TopicID", request.TopicID);
                 parameters.Add("@SingerNickName", request.SingerNickName);
                 parameters.Add("@AuthorName", request.AuthorName);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongAdd", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Song>(connection, "SongAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Song()
                 {
                     Message = e.Message
                 };
             }
         }
-        public Messages DeleteSong(int  id)
+        public Song DeleteSong(int  id)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@SongID", id);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongDelete", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Song>(connection, "SongDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Song()
                 {
                     Message = "Something went wrong"
                 };
             }
         }
-        public Messages EditSong(EditSong request)
+        public Song EditSong(EditSong request)
         {
             try
             {
@@ -120,29 +120,29 @@ namespace Mp3WebMusic.DAL.Songs
                 parameters.Add("@TopicID", request.TopicID);
                 parameters.Add("@SingerNickName", request.SingerNickName);
                 parameters.Add("@AuthorName", request.AuthorName);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongEdit", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Song>(connection, "SongEdit", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Song()
                 {
                     Message = e.Message
                 };
             }
         }
-        public Messages RestoreSong(int id)
+        public Song RestoreSong(int id)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@SongID", id);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongRestore", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Song>(connection, "SongRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Song()
                 {
                     Message = e.Message
                 };

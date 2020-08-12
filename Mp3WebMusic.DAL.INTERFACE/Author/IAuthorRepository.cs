@@ -9,16 +9,13 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
 {
     public interface IAuthorRepository
     {        
-        IList<AuthorResult> GetsAuthorIsDelete();
-        //IList<AuthorResult> GetsAuthorByUpLoadday();
-        //IList<AuthorResult> GetsAuthorByType(int typeid);
-        //IList<AuthorResult> GetsAuthorByTopic(int topicid);
-        //IList<AuthorResult> GetsAuthorBySinger(int singerid);
-        IList<AuthorResult> GetsAuthorIsNotDelete();
-        AuthorResultById GetAuthorById(int authorid);
-        Messages AddAuthor(AddAuthor request);
-        Messages DeleteAuthor(DeleteAuthor request);
-        Messages EditAuthor(EditAuthor request);
-        Messages RestoreAuthor(RestoreAuthor request);
+        IList<Author> GetsAuthorIsDelete();
+
+        IList<Author> GetsAuthorIsNotDelete();
+        Author GetAuthorById(int authorid);
+        Author AddAuthor(AddAuthor request);
+        Author DeleteAuthor(int request);
+        Author EditAuthor(EditAuthor request);
+        Author RestoreAuthor(int request);
     }
 }

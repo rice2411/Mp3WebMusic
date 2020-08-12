@@ -10,14 +10,14 @@ namespace Mp3WebMusic.DAL.INTERFACE
 {
     public interface ITopicRepository
     {
-        Task<IList<GetTopic>> GetsTopicIsNotDelete();
-        Task<IList<GetTopic>> GetsTopicIsDelete();
+        Task<IList<Topic>> GetsTopicIsNotDelete();
+        Task<IList<Topic>> GetsTopicIsDelete();
       
-        Task<GetTopic> Get(int TopicID); 
-        Task<DeleteTopic> Delete(DeleteTopicRequest request);
-        Task<DeleteTopic> Restore(DeleteTopicRequest request);
-        Task<AddTopic> Add( AddTopicRequest request);
-        Task<EditTopic> Edit(EditTopicRequest request);
+        Task<Topic> Get(int TopicID); 
+        Task<Topic> Delete(int id);
+        Task<Topic> Restore(int id);
+        Task<Topic> Add( AddTopicRequest request);
+        Task<Topic> Edit(EditTopicRequest request);
 
     }
 }

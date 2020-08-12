@@ -11,7 +11,7 @@ namespace Mp3WebMusic.DOMAIN.Reponse.Songs
         public string Avatar { get; set; }
         public string Introduce { get; set; }        
         public bool IsDelete { get; set; }
-        public DateTime UpLoadDate { get; set; }
+        public string Message { get; set; }
         public float Views { get; set; }
     }
 }

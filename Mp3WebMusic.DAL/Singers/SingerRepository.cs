@@ -12,7 +12,7 @@ namespace Mp3WebMusic.DAL.Singers
 {
     public class SingerRepository :BaseRepository, ISingerRepository
     {
-        public async Task<AddSinger> Add(AddSingerRequest request)
+        public async Task<Singer> Add(AddSingerRequest request)
         {
             try
             {
@@ -24,40 +24,40 @@ namespace Mp3WebMusic.DAL.Singers
                 parameters.Add("@Avatar", request.Avatar);
 
 
-                var model = SqlMapper.QueryFirstOrDefault<AddSinger>(connection, "SingerAdd", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Singer>(connection, "SingerAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new AddSinger()
+                return new Singer()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
         }
 
-        public async Task<DeleteSinger> Delete(DeleteSingerRequest request)
+        public async Task<Singer> Delete(int request)
         {
             try
             {
 
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@SingerID", request.SingerID);
+                parameters.Add("@SingerID", request);
 
-                var model = SqlMapper.QueryFirstOrDefault<DeleteSinger>(connection, "SingerDelete", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Singer>(connection, "SingerDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new DeleteSinger()
+                return new Singer()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
 
         }
 
-        public async Task<EditSinger> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(EditSingerRequest request)
         {
             try
             {
@@ -70,58 +70,58 @@ namespace Mp3WebMusic.DAL.Singers
                 parameters.Add("@Avatar", request.Avatar);
 
 
-                var model = SqlMapper.QueryFirstOrDefault<EditSinger>(connection, "SingerEdit", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Singer>(connection, "SingerEdit", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new EditSinger()
+                return new Singer()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
         }
 
-        public async Task<GetSinger> Get(int SingerID)
+        public async Task<Singer> Get(int SingerID)
         {
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@SingerID",SingerID);
-            return (await SqlMapper.QueryFirstOrDefaultAsync<GetSinger>(cnn: connection,
+            return (await SqlMapper.QueryFirstOrDefaultAsync<Singer>(cnn: connection,
                              param: parameters,
                             sql: "SingerGetByID",
                             commandType: CommandType.StoredProcedure));
         }
 
-        public async Task<IList<GetSinger>> GetsSingerIsDelete()
+        public async Task<IList<Singer>> GetsSingerIsDelete()
         {
 
-            IList<GetSinger> singers = SqlMapper.Query<GetSinger>(connection, "SingerGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Singer> singers = SqlMapper.Query<Singer>(connection, "SingerGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
             return singers;
         }
 
-        public async Task<IList<GetSinger>> GetsSingerIsNotDelete()
+        public async Task<IList<Singer>> GetsSingerIsNotDelete()
         {
-            IList<GetSinger> singers = SqlMapper.Query<GetSinger>(connection, "SingerGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Singer> singers = SqlMapper.Query<Singer>(connection, "SingerGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return singers;
         }
 
-        public async Task<DeleteSinger> Restore(DeleteSingerRequest request)
+        public async Task<Singer> Restore(int request)
         {
             try
             {
 
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@SingerID", request.SingerID);
+                parameters.Add("@SingerID", request);
 
-                var model = SqlMapper.QueryFirstOrDefault<DeleteSinger>(connection, "SingerRestore", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Singer>(connection, "SingerRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new DeleteSinger()
+                return new Singer()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
 

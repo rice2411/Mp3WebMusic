@@ -14,7 +14,7 @@ namespace Mp3WebMusic.DAL.Topics
     public class TopicRepository : BaseRepository, ITopicRepository
 
     {
-        public async Task<AddTopic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(AddTopicRequest request)
         {
             try
             {
@@ -22,40 +22,40 @@ namespace Mp3WebMusic.DAL.Topics
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@TopicName", request.TopicName);
                
-                var model = SqlMapper.QueryFirstOrDefault<AddTopic>(connection, "TopicAdd", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new AddTopic()
+                return new Topic()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
         }
 
-        public async Task<DeleteTopic> Delete(DeleteTopicRequest request)
+        public async Task<Topic> Delete(int request)
         {
             try
             {
 
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@TopicID", request.TopicID);
+                parameters.Add("@TopicID", request);
 
-                var model = SqlMapper.QueryFirstOrDefault<DeleteTopic>(connection, "TopicDelete", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new DeleteTopic()
+                return new Topic()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
 
         }
 
-        public async Task<EditTopic> Edit(EditTopicRequest request)
+        public async Task<Topic> Edit(EditTopicRequest request)
         {
             try
             {
@@ -64,58 +64,58 @@ namespace Mp3WebMusic.DAL.Topics
                 parameters.Add("@TopicName", request.TopicName);
                 parameters.Add("@TopicID", request.TopicID);
 
-                var model = SqlMapper.QueryFirstOrDefault<EditTopic>(connection, "TopicEdit", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicEdit", parameters, commandType: CommandType.StoredProcedure);
                 return  model;
             }
             catch (Exception e)
             {
-                return new EditTopic()
+                return new Topic()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
 
         }
 
-        public async Task<GetTopic> Get(int TopicID)
+        public async Task<Topic> Get(int TopicID)
         {
 
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@TopicID", TopicID);
-            return (await SqlMapper.QueryFirstOrDefaultAsync<GetTopic>(cnn: connection,
+            return (await SqlMapper.QueryFirstOrDefaultAsync<Topic>(cnn: connection,
                              param: parameters,
                             sql: "TopicGetByID",
                             commandType: CommandType.StoredProcedure));
         }
 
-       public async Task<IList<GetTopic>> GetsTopicIsDelete()
+       public async Task<IList<Topic>> GetsTopicIsDelete()
         {
-            IList<GetTopic> topics = SqlMapper.Query<GetTopic>(connection, "TopicGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Topic> topics = SqlMapper.Query<Topic>(connection, "TopicGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
               return  topics;
         }
 
-        public async Task<IList<GetTopic>> GetsTopicIsNotDelete()
+        public async Task<IList<Topic>> GetsTopicIsNotDelete()
         {
-            IList<GetTopic> topics = SqlMapper.Query<GetTopic>(connection, "TopicGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Topic> topics = SqlMapper.Query<Topic>(connection, "TopicGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return topics;
         }
 
-        public async Task<DeleteTopic> Restore(DeleteTopicRequest request)
+        public async Task<Topic> Restore(int request)
         {
             try
             {
 
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@TopicID", request.TopicID);
+                parameters.Add("@TopicID", request);
 
-                var model = SqlMapper.QueryFirstOrDefault<DeleteTopic>(connection, "TopicRestore", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Topic>(connection, "TopicRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new DeleteTopic()
+                return new Topic()
                 {
-                    Message = "Something went wrong, please try again"
+                    Message = e.Message
                 };
             }
         }

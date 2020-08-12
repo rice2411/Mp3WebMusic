@@ -14,38 +14,38 @@ namespace Mp3WebMusic.BAL.Singers
         {
             this.singerRepository = singerRepository;
         }
-        public async Task<AddSinger> Add(AddSingerRequest request)
+        public async Task<Singer> Add(AddSingerRequest request)
         {
             return await singerRepository.Add(request);
         }
 
-        public async Task<DeleteSinger> Delete(DeleteSingerRequest request)
+        public async Task<Singer> Delete(int request)
         {
             return await singerRepository.Delete(request);
         }
 
-        public async Task<EditSinger> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(EditSingerRequest request)
         {
             return await singerRepository.Edit(request);
         }
 
-        public async Task<GetSinger> Get(int SingerID)
+        public async Task<Singer> Get(int SingerID)
         {
             return await singerRepository.Get(SingerID);
         }
 
-        public  async Task<IList<GetSinger>> GetsSingerIsDelete()
+        public  async Task<IList<Singer>> GetsSingerIsDelete()
         {
             return await singerRepository.GetsSingerIsDelete();
 
         }
 
-        public async Task<IList<GetSinger>> GetsSingerIsNotDelete()
+        public async Task<IList<Singer>> GetsSingerIsNotDelete()
         {
             return await singerRepository.GetsSingerIsNotDelete();
         }
 
-        public async Task<DeleteSinger> Restore(DeleteSingerRequest request)
+        public async Task<Singer> Restore(int request)
         {
             return await singerRepository.Restore(request);
             

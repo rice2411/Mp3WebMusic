@@ -8,13 +8,13 @@ namespace Mp3WebMusic.DAL.INTERFACE.Singers
 {
      public interface ISingerRepository
     {
-        Task<IList<GetSinger>> GetsSingerIsNotDelete();
-        Task<IList<GetSinger>> GetsSingerIsDelete();
+        Task<IList<Singer>> GetsSingerIsNotDelete();
+        Task<IList<Singer>> GetsSingerIsDelete();
 
-        Task<GetSinger> Get(int SingerID);
-        Task<DeleteSinger> Delete(DeleteSingerRequest request);
-        Task<DeleteSinger> Restore(DeleteSingerRequest request);
-        Task<AddSinger> Add(AddSingerRequest request);
-        Task<EditSinger> Edit(EditSingerRequest request);
+        Task<Singer> Get(int SingerID);
+        Task<Singer> Delete(int SingerID);
+        Task<Singer> Restore(int SingerID);
+        Task<Singer> Add(AddSingerRequest request);
+        Task<Singer> Edit(EditSingerRequest request);
     }
 }

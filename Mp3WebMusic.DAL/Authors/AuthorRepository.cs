@@ -13,58 +13,27 @@ namespace Mp3WebMusic.DAL.Songs
 {
     public class AuthorRepository : BaseRepository, IAuthorRepository
     {
-        //public IList<AuthorResult> GetsSongTrending()
-        //{
-        //    IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsTrending", commandType: CommandType.StoredProcedure).ToList();
-        //    return songs;
-        //}
-        public IList<AuthorResult> GetsAuthorIsDelete()
+
+        public IList<Author> GetsAuthorIsDelete()
         {
-            IList<AuthorResult> authors = SqlMapper.Query<AuthorResult>(connection, "AuthorGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
+            IList<Author> authors = SqlMapper.Query<Author>(connection, "AuthorGetsIsDelete", commandType: CommandType.StoredProcedure).ToList();
             return authors;
         }
-        //public IList<AuthorResult> GetsAuthorByUpLoadday()
-        //{
-        //    IList<AuthorResult> authors = SqlMapper.Query<AuthorResult>(connection, "AuthorGetsByUpLoadDay", commandType: CommandType.StoredProcedure).ToList();
-        //    return authors;
-        //}
-        //public IList<AuthorResult> GetsAuthorByType(int typeid)
-        //{
-        //    DynamicParameters parameters = new DynamicParameters();
-        //    parameters.Add("@TypeID", typeid);
-        //    IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByType", parameters, commandType: CommandType.StoredProcedure).ToList();
-        //    return songs;
-        //}
-        //public IList<SongResult> GetsSongByTopic(int topicid)
-        //{
-        //    DynamicParameters parameters = new DynamicParameters();
-        //    parameters.Add("@TopicID", topicid);
-        //    IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsByTopic", parameters, commandType: CommandType.StoredProcedure).ToList();
-        //    return songs;
-        //}
 
-        //public IList<SongResult> GetsSongBySinger(int singerid)
-        //{
-        //    DynamicParameters parameters = new DynamicParameters();
-        //    parameters.Add("@SingerID", singerid);
-        //    IList<SongResult> songs = SqlMapper.Query<SongResult>(connection, "SongGetsBySinger", parameters, commandType: CommandType.StoredProcedure).ToList();
-        //    return songs;
-        //}
-
-        public IList<AuthorResult> GetsAuthorIsNotDelete()
+        public IList<Author> GetsAuthorIsNotDelete()
         {
          
-            IList<AuthorResult> authors = SqlMapper.Query<AuthorResult>(connection, "AuthorGetsIsNotDelete",  commandType: CommandType.StoredProcedure).ToList();
+            IList<Author> authors = SqlMapper.Query<Author>(connection, "AuthorGetsIsNotDelete",  commandType: CommandType.StoredProcedure).ToList();
             return authors;
         }
-        public AuthorResultById GetAuthorById(int authorid)
+        public Author GetAuthorById(int authorid)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@AuthorId", authorid);
-            AuthorResultById author = SqlMapper.Query<AuthorResultById>(connection, "AuthorGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+            Author author = SqlMapper.Query<Author>(connection, "AuthorGetByID", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
             return author ;
         }
-        public Messages AddAuthor(AddAuthor request)
+        public Author AddAuthor(AddAuthor request)
         {
             try
             {
@@ -77,35 +46,35 @@ namespace Mp3WebMusic.DAL.Songs
                 parameters.Add("@Introduce", request.Introduce);              
                 
                 
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "AuthorAdd", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Author>(connection, "AuthorAdd", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Author()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages DeleteAuthor(DeleteAuthor request)
+        public Author DeleteAuthor(int request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@AuthorId", request.AuthorId);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "AuthorDelete", parameters, commandType: CommandType.StoredProcedure);
+                parameters.Add("@AuthorId", request);
+                var model = SqlMapper.QueryFirstOrDefault<Author>(connection, "AuthorDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Author()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages EditAuthor(EditAuthor request)
+        public Author EditAuthor(EditAuthor request)
         {
             try
             {
@@ -116,31 +85,31 @@ namespace Mp3WebMusic.DAL.Songs
                 parameters.Add("@Introduce", request.Introduce);
                 //parameters.Add("@UpLoadDate", request.UpLoadDate);
                 
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "AuthorEdit", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<Author>(connection, "AuthorEdit", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Author()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages RestoreAuthor(RestoreAuthor request)
+        public Author RestoreAuthor(int request)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@AuthorId", request.AuthorId);
-                var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "AuthorRestore", parameters, commandType: CommandType.StoredProcedure);
+                parameters.Add("@AuthorId", request);
+                var model = SqlMapper.QueryFirstOrDefault<Author>(connection, "AuthorRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)
             {
-                return new Messages()
+                return new Author()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }

@@ -5,18 +5,18 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mp3WebMusic.BAL.INTERFACE.Songs;
 using Mp3WebMusic.BAL.INTERFACE.Topics;
-using Mp3WebMusic.BAL.INTERFACE.Types;
+using Mp3WebMusic.BAL.INTERFACE.Type;
 using Mp3WebMusic.BAL.Singers;
 using Mp3WebMusic.BAL.Songs;
 using Mp3WebMusic.BAL.Topics;
-using Mp3WebMusic.BAL.Types;
+using Mp3WebMusic.BAL.Type;
 using Mp3WebMusic.DAL.INTERFACE;
 using Mp3WebMusic.DAL.INTERFACE.Singers;
 using Mp3WebMusic.DAL.INTERFACE.Songs;
 using Mp3WebMusic.DAL.Singers;
 using Mp3WebMusic.DAL.Songs;
 using Mp3WebMusic.DAL.Topics;
-using Mp3WebMusic.DAL.Types;
+using Mp3WebMusic.DAL.Type;
 
 namespace Mp3WebMusic.API
 {

@@ -19,45 +19,45 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpGet]
         [Route("/Api/Singer/GetsSingerIsDelete")]
-        public async Task<IEnumerable<GetSinger>> GetsSingerIsDelete()
+        public async Task<IEnumerable<Singer>> GetsSingerIsDelete()
         {
             return await singerService.GetsSingerIsDelete();
         }
         [HttpGet]
         [Route("/Api/Singer/GetsSingerIsNotDelete")]
-        public async Task<IEnumerable<GetSinger>> GetsSingerIsNotDelete()
+        public async Task<IEnumerable<Singer>> GetsSingerIsNotDelete()
         {
             return await singerService.GetsSingerIsNotDelete();
         }
         [HttpGet]
-        [Route("/Api/Singer/GetsSingerByID/{SingerID}")]
-        public async Task<GetSinger> Get(int SingerID)
+        [Route("/Api/Singer/GetsSingerByID/{id}")]
+        public async Task<Singer> Get(int id)
         {
-            return await singerService.Get(SingerID);
+            return await singerService.Get(id);
         }
         [HttpPost]
         [Route("/Api/Singer/Add")]
-        public async Task<AddSinger> Add(AddSingerRequest request)
+        public async Task<Singer> Add(AddSingerRequest request)
         {
             return await singerService.Add(request);
         }
         [HttpPost]
         [Route("/Api/Singer/Edit")]
-        public async Task<EditSinger> Edit(EditSingerRequest request)
+        public async Task<Singer> Edit(EditSingerRequest request)
         {
             return await singerService.Edit(request);
         }
         [HttpPost]
-        [Route("/Api/Singer/Delete")]
-        public async Task<DeleteSinger> Delete(DeleteSingerRequest request)
+        [Route("/Api/Singer/Delete/{id}")]
+        public async Task<Singer> Delete(int id)
         {
-            return await singerService.Delete(request);
+            return await singerService.Delete(id);
         }
         [HttpPost]
-        [Route("/Api/Singer/Restore")]
-        public async Task<DeleteSinger> Restore(DeleteSingerRequest request)
+        [Route("/Api/Singer/Restore/{id}")]
+        public async Task<Singer> Restore(int id)
         {
-            return await singerService.Restore(request);
+            return await singerService.Restore(id);
         }
     }
 }

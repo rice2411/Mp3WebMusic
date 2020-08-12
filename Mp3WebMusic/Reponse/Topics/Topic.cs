@@ -9,5 +9,6 @@ namespace Mp3WebMusic.DOMAIN.Reponse.Topics
         public int TopicID { get; set; }
         public string TopicName { get; set; }
         public bool IsDelete { get; set; }
+        public string Message { get; set; }
     }
 }

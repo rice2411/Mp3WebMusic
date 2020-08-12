@@ -19,46 +19,46 @@ namespace Mp3WebMusic.API.Controllers
         }
         [HttpGet]
         [Route("/Api/Topic/GetsTopicIsDelete")]
-        public  async Task< IEnumerable<GetTopic>> GetsTopicIsDelete()
+        public  async Task< IEnumerable<Topic>> GetsTopicIsDelete()
         {
             return await topicService.GetsTopicIsDelete();    
         }
         [HttpGet]
         [Route("/Api/Topic/GetsTopicIsNotDelete")]
-        public async Task<IEnumerable<GetTopic>> GetsTopicIsNotDelete()
+        public async Task<IEnumerable<Topic>> GetsTopicIsNotDelete()
         {
             return await topicService.GetsTopicIsNotDelete();
         }
         [HttpGet]
         [Route("/Api/Topic/Get/{id}")]
-        public async Task<GetTopic> Get(int id)
+        public async Task<Topic> Get(int id)
         {
             return await topicService.Get(id);
         }
         [HttpPost]
         [Route("/Api/Topic/Add")]
-        public async Task<AddTopic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(AddTopicRequest request)
         {
             return await topicService.Add(request);
         }
         [HttpPost]
         [Route("/Api/Topic/Edit")]
-        public async Task<EditTopic> Edit(EditTopicRequest request)
+        public async Task<Topic> Edit(EditTopicRequest request)
         {
             return await topicService.Edit(request);
         }
         [HttpPost]
-        [Route("/Api/Topic/Delete")]
-        public async Task<DeleteTopic> Delete(DeleteTopicRequest request)
+        [Route("/Api/Topic/Delete/{id}")]
+        public async Task<Topic> Delete(int id)
         {
-            return await topicService.Delete(request);
+            return await topicService.Delete(id);
 
         }
         [HttpPost]
-        [Route("/Api/Topic/Restore")]
-        public async Task<DeleteTopic> Restore(DeleteTopicRequest request)
+        [Route("/Api/Topic/Restore/{id}")]
+        public async Task<Topic> Restore(int id)
         {
-            return await topicService.Restore(request);
+            return await topicService.Restore(id);
 
         }
     }

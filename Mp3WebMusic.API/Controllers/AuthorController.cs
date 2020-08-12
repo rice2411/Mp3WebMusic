@@ -18,80 +18,52 @@ namespace Mp3WebMusic.API.Controllers
         {
             this.authorService = authorService;
         }
-        //[HttpGet]
-        //[Route("/Api/Author/GetsSongTrending")]
-        //public IEnumerable<SongResult> GetsSongTrending()
-        //{
-        //    return songService.GetsSongTrending();
-        //}
+
         [HttpGet]
         [Route("/Api/Author/GetsAuthorIsDelete")]
-        public IEnumerable<AuthorResult> GetsAuthorIsDelete()
+        public IEnumerable<Author> GetsAuthorIsDelete()
         {
             return authorService.GetsAuthorIsDelete();
         }
-        //[HttpGet]
-        //[Route("/Api/Author/GetsAuthorByUpLoadday")]
-        //public IEnumerable<AuthorResult> GetsByUpLoadday()
-        //{
-        //    return authorService.GetsAuthorByUpLoadday();
-        //}
-        //[HttpGet]
-        //[Route("/Api/Song/GetsSongByType")]
-        //public IEnumerable<SongResult> GetsSongByType(int typeid)
-        //{
-        //    return songService.GetsSongByType(typeid);
-        //}
-        //[HttpGet]
-        //[Route("/Api/Song/GetsSongByTopic")]
-        //public IEnumerable<SongResult> GetsSongByTopic(int topicid)
-        //{
-        //    return songService.GetsSongByTopic(topicid);
-        //}
-        //[HttpGet]
-        //[Route("/Api/Song/GetsSongBySinger")]
-        //public IEnumerable<SongResult> GetsSongBySinger(int singerid)
-        //{
-        //    return songService.GetsSongBySinger(singerid);
-        //}
+
         [HttpGet]
         [Route("/Api/Author/GetsAuthorIsNotDelete")]
-        public IList<AuthorResult> GetsAuthorIsNotDelete()
+        public IList<Author> GetsAuthorIsNotDelete()
         {
             return authorService.GetsAuthorIsNotDelete();
         }
 
         [HttpGet]
-        [Route("/Api/Author/GetAuthorById")]
-        public AuthorResultById GetAuthorById(int authorid)
+        [Route("/Api/Author/GetAuthorById/{id}")]
+        public Author GetAuthorById(int id)
         {
-            return authorService.GetAuthorById(authorid);
+            return authorService.GetAuthorById(id);
         }
 
         [HttpPost]
         [Route("/Api/Author/AddAuthor")]
-        public Messages AddAuthor(AddAuthor request)
+        public Author AddAuthor(AddAuthor request)
         {
             return authorService.AddAuthor(request);
         }
 
         [HttpPost]
-        [Route("/Api/Author/DeleteAuthor")]
-        public Messages DeleteAuthor(DeleteAuthor request)
+        [Route("/Api/Author/DeleteAuthor/{id}")]
+        public Author DeleteAuthor(int id)
         {
-            return authorService.DeleteAuthor(request);
+            return authorService.DeleteAuthor(id);
         }
         [HttpPost]
         [Route("/Api/Author/EditAuthor")]
-        public Messages EditAuthor(EditAuthor request)
+        public Author EditAuthor(EditAuthor request)
         {
             return authorService.EditAuthor(request);
         }
         [HttpPost]
-        [Route("/Api/Author/RestoreAuthor")]
-        public Messages RestoreAuthor(RestoreAuthor request)
+        [Route("/Api/Author/RestoreAuthor/{id}")]
+        public Author RestoreAuthor(int id)
         {
-            return authorService.RestoreAuthor(request);
+            return authorService.RestoreAuthor(id);
         }
 
 

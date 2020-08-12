@@ -9,17 +9,17 @@ namespace Mp3WebMusic.DAL.INTERFACE.Songs
 {
     public interface ISongRepository
     {
-        IList<SongResult> GetsSongTrending();
-        IList<SongResult> GetsSongIsDelete();
-        IList<SongResult> GetsSongByUpLoadday();
-        IList<SongResult> GetsSongByType(int typeid);
-        IList<SongResult> GetsSongByTopic(int topicid);
-        IList<SongResult> GetsSongBySinger(int singerid);
-        IList<SongResult> GetsSongByAuthor(int authorid);
-        SongResultById GetSongById(int songid);
-        Messages AddSong(AddSong request);
-        Messages DeleteSong(int id);
-        Messages EditSong(EditSong request);
-        Messages RestoreSong(int id);
+        IList<Song> GetsSongTrending();
+        IList<Song> GetsSongIsDelete();
+        IList<Song> GetsSongByUpLoadday();
+        IList<Song> GetsSongByType(int typeid);
+        IList<Song> GetsSongByTopic(int topicid);
+        IList<Song> GetsSongBySinger(int singerid);
+        IList<Song> GetsSongByAuthor(int authorid);
+        Song GetSongById(int songid);
+        Song AddSong(AddSong request);
+        Song DeleteSong(int id);
+        Song EditSong(EditSong request);
+        Song RestoreSong(int id);
     }
 }

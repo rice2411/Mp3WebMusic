@@ -22,74 +22,74 @@ namespace Mp3WebMusic.API.Controllers
         #region Song
         [HttpGet]
         [Route("/Api/Song/GetsSongTrending")]
-        public IEnumerable<SongResult> GetsSongTrending()
+        public IEnumerable<Song> GetsSongTrending()
         {
             return songService.GetsSongTrending();
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongIsDelete")]
-        public IEnumerable<SongResult> GetsSongIsDelete()
+        public IEnumerable<Song> GetsSongIsDelete()
         {
             return songService.GetsSongIsDelete();
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongByUpLoadday")]
-        public IEnumerable<SongResult> GetsSongByUpLoadday()
+        public IEnumerable<Song> GetsSongByUpLoadday()
         {
             return songService.GetsSongByUpLoadday();
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongByType/{id}")]
-        public IEnumerable<SongResult> GetsSongByType(int id)
+        public IEnumerable<Song> GetsSongByType(int id)
         {
             return songService.GetsSongByType(id);
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongByTopic/{id}")]
-        public IEnumerable<SongResult> GetsSongByTopic(int id)
+        public IEnumerable<Song> GetsSongByTopic(int id)
         {
             return songService.GetsSongByTopic(id);
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongBySinger/{id}")]
-        public IEnumerable<SongResult> GetsSongBySinger(int id)
+        public IEnumerable<Song> GetsSongBySinger(int id)
         {
             return songService.GetsSongBySinger(id);
         }
         [HttpGet]
         [Route("/Api/Song/GetsSongByAuthor/{id}")]
-        public IList<SongResult> GetsSongByAuthor(int id)
+        public IList<Song> GetsSongByAuthor(int id)
         {
             return songService.GetsSongByAuthor(id);
         }
        
         [HttpGet]
         [Route("/Api/Song/GetSongById/{id}")]
-        public SongResultById GetSongById(int id)
+        public Song GetSongById(int id)
         {
             return songService.GetSongById(id);
         }
         [HttpPost]
         [Route("/Api/Song/AddSong")]
-        public Messages AddSong(AddSong request)
+        public Song AddSong(AddSong request)
         {
             return songService.AddSong(request);
         }
         [HttpPost]
         [Route("/Api/Song/DeleteSong/{id}")]
-        public Messages DeleteSong(int id )
+        public Song DeleteSong(int id )
         {
             return songService.DeleteSong(id);
         }
         [HttpPost]
         [Route("/Api/Song/EditSong")]
-        public Messages EditSong(EditSong request)
+        public Song EditSong(EditSong request)
         {
             return songService.EditSong(request);
         }
         [HttpPost]
         [Route("/Api/Song/RestoreSong/{id}")]
-        public Messages RestoreSong(int id)
+        public Song RestoreSong(int id)
         {
             return songService.RestoreSong(id);
         }

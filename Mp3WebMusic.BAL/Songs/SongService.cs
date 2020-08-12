@@ -18,55 +18,55 @@ namespace Mp3WebMusic.BAL.Songs
             this.songRepository = songRepository;
         }
 
-        public IList<SongResult> GetsSongTrending()
+        public IList<Song> GetsSongTrending()
         {
             return songRepository.GetsSongTrending();
         }
-        public IList<SongResult> GetsSongIsDelete()
+        public IList<Song> GetsSongIsDelete()
         {
             return songRepository.GetsSongIsDelete();
         }
-        public IList<SongResult> GetsSongByUpLoadday()
+        public IList<Song> GetsSongByUpLoadday()
         {
             return songRepository.GetsSongByUpLoadday();
         }
-        public IList<SongResult> GetsSongByType(int typeid)
+        public IList<Song> GetsSongByType(int typeid)
         {
             return songRepository.GetsSongByType( typeid);
         }
-        public IList<SongResult> GetsSongByTopic(int topicid)
+        public IList<Song> GetsSongByTopic(int topicid)
         {
             return songRepository.GetsSongByTopic(topicid);
         }
         
-        public IList<SongResult> GetsSongBySinger(int singerid)
+        public IList<Song> GetsSongBySinger(int singerid)
         {
             return songRepository.GetsSongBySinger(singerid);
         }
 
-        public IList<SongResult> GetsSongByAuthor(int authorid)
+        public IList<Song> GetsSongByAuthor(int authorid)
         {
             return songRepository.GetsSongByAuthor(authorid);
         }
 
-        public SongResultById GetSongById(int songid)
+        public Song GetSongById(int songid)
         {
             return songRepository.GetSongById(songid);
         }
 
-        public Messages AddSong(AddSong request)
+        public Song AddSong(AddSong request)
         {
             return songRepository.AddSong(request);
         }
-        public Messages DeleteSong(int id )
+        public Song DeleteSong(int id )
         {
             return songRepository.DeleteSong(id);
         }
-        public Messages EditSong(EditSong request)
+        public Song EditSong(EditSong request)
         {
             return songRepository.EditSong(request);
         }
-        public Messages RestoreSong(int id)
+        public Song RestoreSong(int id)
         {
             return songRepository.RestoreSong(id);
         }

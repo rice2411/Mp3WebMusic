@@ -9,14 +9,14 @@ namespace Mp3WebMusic.BAL.INTERFACE.Topics
 {
     public interface ITopicService
     {
-        Task<IList<GetTopic>> GetsTopicIsNotDelete();
-        Task<IList<GetTopic>> GetsTopicIsDelete();
+        Task<IList<Topic>> GetsTopicIsNotDelete();
+        Task<IList<Topic>> GetsTopicIsDelete();
 
-        Task<GetTopic> Get(int TopicID);
-        Task<DeleteTopic> Delete(DeleteTopicRequest request);
-        Task<DeleteTopic> Restore(DeleteTopicRequest request);
-        Task<AddTopic> Add(AddTopicRequest request);
-        Task<EditTopic> Edit(EditTopicRequest request);
+        Task<Topic> Get(int TopicID);
+        Task<Topic> Delete(int request);
+        Task<Topic> Restore(int request);
+        Task<Topic> Add(AddTopicRequest request);
+        Task<Topic> Edit(EditTopicRequest request);
 
     }
 }

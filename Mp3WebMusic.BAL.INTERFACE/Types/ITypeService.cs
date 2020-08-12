@@ -3,16 +3,16 @@ using Mp3WebMusic.DOMAIN.Reponse.Types;
 using Mp3WebMusic.DOMAIN.Request.Songs;
 using System.Collections.Generic;
 
-namespace Mp3WebMusic.BAL.INTERFACE.Types
+namespace Mp3WebMusic.BAL.INTERFACE.Type
 {
     public interface ITypeService
     {
-        IList<TypeResult> GetsTypeIsNotDelete();
-        IList<TypeResult> GetsTypeIsDelete();
-        TypeResultById GetTypeById(int typeid);
-        Messages AddType(AddType request);
-        Messages DeleteType(DeleteType request);
-        Messages EditType(EditType request);
-        Messages RestoreType(RestoreType request);
+        IList<Types> GetsTypeIsNotDelete();
+        IList<Types> GetsTypeIsDelete();
+        Types GetTypeById(int typeid);
+        Types AddType(AddType request);
+        Types DeleteType(int request);
+        Types EditType(EditType request);
+        Types RestoreType(int request);
     }
 }

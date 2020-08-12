@@ -10,13 +10,13 @@ namespace Mp3WebMusic.DAL.INTERFACE
 {
     public interface ITypeRepository
     {
-        IList<TypeResult> GetsTypeIsNotDelete();
-        IList<TypeResult> GetsTypeIsDelete();
-        TypeResultById GetTypeById(int typeid);
-        Messages AddType(AddType request);
-        Messages DeleteType(DeleteType request);
-        Messages EditType(EditType request);
-        Messages RestoreType(RestoreType request);
+        IList<Types> GetsTypeIsNotDelete();
+        IList<Types> GetsTypeIsDelete();
+        Types GetTypeById(int typeid);
+        Types AddType(AddType request);
+        Types DeleteType(int id);
+        Types EditType(EditType request);
+        Types RestoreType(int id);
 
     }
 }

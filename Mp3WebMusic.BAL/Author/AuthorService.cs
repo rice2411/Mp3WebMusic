@@ -18,51 +18,35 @@ namespace Mp3WebMusic.BAL.Songs
             this.authorRepository = authorRepository;
         }
 
-        public IList<AuthorResult> GetsAuthorIsDelete()
+        public IList<Author> GetsAuthorIsDelete()
         {
             return authorRepository.GetsAuthorIsDelete();
         }
-        //public IList<AuthorResult> GetsAuthorByUpLoadday()
-        //{
-        //    return authorRepository.GetsAuthorByUpLoadday();
-        //}
-        //public IList<SongResult> GetsSongByType(int typeid)
-        //{
-        //    return songRepository.GetsSongByType( typeid);
-        //}
-        //public IList<SongResult> GetsSongByTopic(int topicid)
-        //{
-        //    return songRepository.GetsSongByTopic(topicid);
-        //}
-        
-        //public IList<SongResult> GetsSongBySinger(int singerid)
-        //{
-        //    return songRepository.GetsSongBySinger(singerid);
-        //}
+      
 
-        public IList<AuthorResult> GetsAuthorIsNotDelete()
+        public IList<Author> GetsAuthorIsNotDelete()
         {
             return authorRepository.GetsAuthorIsNotDelete();
         }
 
-        public AuthorResultById GetAuthorById(int authorid)
+        public Author GetAuthorById(int authorid)
         {
             return authorRepository.GetAuthorById(authorid);
         }
 
-        public Messages AddAuthor(AddAuthor request)
+        public Author AddAuthor(AddAuthor request)
         {
             return authorRepository.AddAuthor(request);
         }
-        public Messages DeleteAuthor(DeleteAuthor request)
+        public Author DeleteAuthor(int request)
         {
             return authorRepository.DeleteAuthor(request);
         }
-        public Messages EditAuthor(EditAuthor request)
+        public Author EditAuthor(EditAuthor request)
         {
             return authorRepository.EditAuthor(request);
         }
-        public Messages RestoreAuthor(RestoreAuthor request)
+        public Author RestoreAuthor(int request)
         {
             return authorRepository.RestoreAuthor(request);
         }

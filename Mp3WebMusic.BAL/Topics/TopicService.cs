@@ -19,39 +19,39 @@ namespace Mp3WebMusic.BAL.Topics
 
       
 
-        public async Task<IList<GetTopic>> GetsTopicIsDelete()
+        public async Task<IList<Topic>> GetsTopicIsDelete()
         {
             return await topicRepository.GetsTopicIsDelete();
         }
 
-        public async Task<GetTopic> Get(int TopicID)
+        public async Task<Topic> Get(int TopicID)
         {
             return await topicRepository.Get(TopicID);
         }
 
-        public async Task<DeleteTopic> Delete(DeleteTopicRequest request)
+        public async Task<Topic> Delete(int request)
         {
             return await topicRepository.Delete(request);
         }
 
-        public async Task<AddTopic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(AddTopicRequest request)
         {
             return await topicRepository.Add(request);
         }
 
-        public  async Task<EditTopic> Edit(EditTopicRequest request)
+        public  async Task<Topic> Edit(EditTopicRequest request)
         {
             return await topicRepository.Edit(request);
         }
 
        
 
-        public async Task<IList<GetTopic>> GetsTopicIsNotDelete()
+        public async Task<IList<Topic>> GetsTopicIsNotDelete()
         {
             return await topicRepository.GetsTopicIsNotDelete();
         }
 
-        public async Task<DeleteTopic> Restore(DeleteTopicRequest request)
+        public async Task<Topic> Restore(int request)
         {
             return await topicRepository.Restore(request);
         }
