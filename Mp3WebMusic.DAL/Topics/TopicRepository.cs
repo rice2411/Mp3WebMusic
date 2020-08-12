@@ -1,12 +1,10 @@
 ﻿using Dapper;
 using Mp3WebMusic.DAL.INTERFACE;
-using Mp3WebMusic.DOMAIN.Reponse.Topics;
 using Mp3WebMusic.DOMAIN.Request.Topics;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Mp3WebMusic.DAL.Topics
@@ -14,7 +12,7 @@ namespace Mp3WebMusic.DAL.Topics
     public class TopicRepository : BaseRepository, ITopicRepository
 
     {
-        public async Task<Topic> Add(AddTopicRequest request)
+        public async Task<Topic> Add(Topic request)
         {
             try
             {
@@ -55,7 +53,7 @@ namespace Mp3WebMusic.DAL.Topics
 
         }
 
-        public async Task<Topic> Edit(EditTopicRequest request)
+        public async Task<Topic> Edit(Topic request)
         {
             try
             {

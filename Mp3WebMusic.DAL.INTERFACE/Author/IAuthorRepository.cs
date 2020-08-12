@@ -1,4 +1,5 @@
-﻿using Mp3WebMusic.DOMAIN.Request.Songs;
+﻿using Mp3WebMusic.DOMAIN.Reponse.Songs;
+using Mp3WebMusic.DOMAIN.Request.Songs;
 using System.Collections.Generic;
 
 namespace Mp3WebMusic.DAL.INTERFACE.Songs
