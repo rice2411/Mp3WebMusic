@@ -114,7 +114,7 @@ namespace Mp3WebMusic.DAL.Singers
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("@SingerID", request.SingerID);
 
-                var model = SqlMapper.QueryFirstOrDefault<DeleteSinger>(connection, "SingerDelete", parameters, commandType: CommandType.StoredProcedure);
+                var model = SqlMapper.QueryFirstOrDefault<DeleteSinger>(connection, "SingerRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
             catch (Exception e)

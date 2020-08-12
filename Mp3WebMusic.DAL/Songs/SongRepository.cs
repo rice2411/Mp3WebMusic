@@ -86,16 +86,16 @@ namespace Mp3WebMusic.DAL.Songs
             {
                 return new Messages()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages DeleteSong(DeleteSong request)
+        public Messages DeleteSong(int  id)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@SongID", request.SongID);
+                parameters.Add("@SongID", id);
                 var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongDelete", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
@@ -127,16 +127,16 @@ namespace Mp3WebMusic.DAL.Songs
             {
                 return new Messages()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }
-        public Messages RestoreSong(RestoreSong request)
+        public Messages RestoreSong(int id)
         {
             try
             {
                 DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("@SongID", request.SongID);
+                parameters.Add("@SongID", id);
                 var model = SqlMapper.QueryFirstOrDefault<Messages>(connection, "SongRestore", parameters, commandType: CommandType.StoredProcedure);
                 return model;
             }
@@ -144,7 +144,7 @@ namespace Mp3WebMusic.DAL.Songs
             {
                 return new Messages()
                 {
-                    Message = "Something went wrong"
+                    Message = e.Message
                 };
             }
         }

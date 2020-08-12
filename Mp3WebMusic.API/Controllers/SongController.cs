@@ -39,35 +39,35 @@ namespace Mp3WebMusic.API.Controllers
             return songService.GetsSongByUpLoadday();
         }
         [HttpGet]
-        [Route("/Api/Song/GetsSongByType")]
-        public IEnumerable<SongResult> GetsSongByType(int typeid)
+        [Route("/Api/Song/GetsSongByType/{id}")]
+        public IEnumerable<SongResult> GetsSongByType(int id)
         {
-            return songService.GetsSongByType(typeid);
+            return songService.GetsSongByType(id);
         }
         [HttpGet]
-        [Route("/Api/Song/GetsSongByTopic")]
-        public IEnumerable<SongResult> GetsSongByTopic(int topicid)
+        [Route("/Api/Song/GetsSongByTopic/{id}")]
+        public IEnumerable<SongResult> GetsSongByTopic(int id)
         {
-            return songService.GetsSongByTopic(topicid);
+            return songService.GetsSongByTopic(id);
         }
         [HttpGet]
-        [Route("/Api/Song/GetsSongBySinger")]
-        public IEnumerable<SongResult> GetsSongBySinger(int singerid)
+        [Route("/Api/Song/GetsSongBySinger/{id}")]
+        public IEnumerable<SongResult> GetsSongBySinger(int id)
         {
-            return songService.GetsSongBySinger(singerid);
+            return songService.GetsSongBySinger(id);
         }
         [HttpGet]
-        [Route("/Api/Song/GetsSongByAuthor")]
-        public IList<SongResult> GetsSongByAuthor(int authorid)
+        [Route("/Api/Song/GetsSongByAuthor/{id}")]
+        public IList<SongResult> GetsSongByAuthor(int id)
         {
-            return songService.GetsSongByAuthor(authorid);
+            return songService.GetsSongByAuthor(id);
         }
        
         [HttpGet]
-        [Route("/Api/Song/GetSongById")]
-        public SongResultById GetSongById(int songid)
+        [Route("/Api/Song/GetSongById/{id}")]
+        public SongResultById GetSongById(int id)
         {
-            return songService.GetSongById(songid);
+            return songService.GetSongById(id);
         }
         [HttpPost]
         [Route("/Api/Song/AddSong")]
@@ -76,10 +76,10 @@ namespace Mp3WebMusic.API.Controllers
             return songService.AddSong(request);
         }
         [HttpPost]
-        [Route("/Api/Song/DeleteSong")]
-        public Messages DeleteSong(DeleteSong request)
+        [Route("/Api/Song/DeleteSong/{id}")]
+        public Messages DeleteSong(int id )
         {
-            return songService.DeleteSong(request);
+            return songService.DeleteSong(id);
         }
         [HttpPost]
         [Route("/Api/Song/EditSong")]
@@ -88,10 +88,10 @@ namespace Mp3WebMusic.API.Controllers
             return songService.EditSong(request);
         }
         [HttpPost]
-        [Route("/Api/Song/RestoreSong")]
-        public Messages RestoreSong(RestoreSong request)
+        [Route("/Api/Song/RestoreSong/{id}")]
+        public Messages RestoreSong(int id)
         {
-            return songService.RestoreSong(request);
+            return songService.RestoreSong(id);
         }
         #endregion
 
