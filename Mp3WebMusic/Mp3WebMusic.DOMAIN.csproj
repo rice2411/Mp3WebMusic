@@ -13,4 +13,8 @@
     <None Remove="Reponse\Topic\**" />
   </ItemGroup>
 
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+  </ItemGroup>
+
 </Project>

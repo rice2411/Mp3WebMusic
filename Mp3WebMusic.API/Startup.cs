@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mp3WebMusic.API.DbContext;
 using Mp3WebMusic.BAL.INTERFACE.Songs;
 using Mp3WebMusic.BAL.INTERFACE.Topics;
 using Mp3WebMusic.BAL.INTERFACE.Type;
@@ -17,6 +20,7 @@ using Mp3WebMusic.DAL.Singers;
 using Mp3WebMusic.DAL.Songs;
 using Mp3WebMusic.DAL.Topics;
 using Mp3WebMusic.DAL.Type;
+using Mp3WebMusic.DOMAIN;
 
 namespace Mp3WebMusic.API
 {
@@ -33,6 +37,9 @@ namespace Mp3WebMusic.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Common.ConnectionString));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddTransient<ITypeRepository, TypeRepository>();
             services.AddTransient<ITypeService, TypeService>();
             services.AddTransient<ISongRepository, SongRepository>();
