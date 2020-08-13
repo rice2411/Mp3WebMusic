@@ -19,5 +19,7 @@ namespace Mp3WebMusic.DOMAIN.Request.Account
         [Compare("Password", ErrorMessage = "Confirm password not match")]
         [Display(Name ="Confirm password")]
         public string ConfirmPassword { get; set; }
+        public string Avatar { get; set; }
+
     }
 }

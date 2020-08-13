@@ -15,5 +15,6 @@ namespace Mp3WebMusic.DOMAIN.Request.Account
         public string Password { get; set; }
         [Display(Name = "Remember me")]
         public bool RememberMe { get; set; }
+        public string Avatar { get; set; }
     }
 }

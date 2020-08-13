@@ -72,7 +72,9 @@ namespace Mp3WebMusic.API.Controllers
             var user = new ApplicationUser()
             {
                 Email = request.Email,
-                UserName = request.Email
+                UserName = request.Email,
+                Avatar = request.Avatar
+
                 
             };
             var registerResult = await userManager.CreateAsync(user, request.Password);
