@@ -6,6 +6,8 @@
 
   <ItemGroup>
  
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+ 
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
@@ -22,6 +24,7 @@
     <ProjectReference Include="..\Mp3WebMusic.BAL\Mp3WebMusic.BAL.csproj" />
     <ProjectReference Include="..\Mp3WebMusic.DAL.INTERFACE\Mp3WebMusic.DAL.INTERFACE.csproj" />
     <ProjectReference Include="..\Mp3WebMusic.DAL\Mp3WebMusic.DAL.csproj" />
+    <ProjectReference Include="..\Mp3WebMusic\Mp3WebMusic.DOMAIN.csproj" />
   </ItemGroup>
 
 
