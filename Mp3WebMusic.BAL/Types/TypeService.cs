@@ -1,6 +1,7 @@
 ﻿using Mp3WebMusic.BAL.INTERFACE.Type;
 
 using Mp3WebMusic.DAL.INTERFACE;
+using Mp3WebMusic.DAL.INTERFACE.Banner;
 using Mp3WebMusic.DOMAIN.Request.Type;
 using System.Collections.Generic;
 
