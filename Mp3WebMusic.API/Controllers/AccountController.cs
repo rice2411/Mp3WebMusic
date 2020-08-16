@@ -85,12 +85,12 @@ namespace Mp3WebMusic.API.Controllers
             }
             return result;
         }
-        [HttpPost]
-        public async Task<IActionResult> Logout()
-        {
-            await signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+        //[HttpPost]
+        //public async Task<IActionResult> Logout()
+        //{
+        //    await signInManager.SignOutAsync();
+        //    return RedirectToAction("Index", "Home");
+        //}
     }
 }
 

@@ -15,7 +15,7 @@ namespace Mp3WebMusic.API.Controllers
     /// Department API
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+
 
     public class UserController : Controller
     {
@@ -29,7 +29,37 @@ namespace Mp3WebMusic.API.Controllers
             this.signInManager = signInManager;
             this.roleManager = roleManager;
         }
-        
+
+        //[HttpGet]
+        //[Route("/Api/User/Gets")]
+        //public async Task<List<User>> Gets()
+        //{
+        //    // var user = await userManager.GetUserAsync(HttpContext.User);
+        //    var users = userManager.Users;
+        //    if (users != null)
+        //    {
+        //        var models = new List<User>();
+        //        models = users.Select(u => new User()
+        //        {
+        //            UserID = u.Id,
+        //            UserName = u.UserName,
+        //            Email = u.Email,
+        //            Avatar = u.Avatar,
+        //            Password = u.PasswordHash
+        //        }).ToList();
+        //        foreach (var user in models)
+        //        {
+        //            user.RolesName = GetRoleName(user.UserID);
+        //        }
+        //        return  models;
+        //    }
+        //}
+        //public string GetRoleName(string userId)
+        //{
+        //    var user = Task.Run(async () => await userManager.FindByIdAsync(userId)).Result;
+        //    var roles = Task.Run(async () => await userManager.GetRolesAsync(user)).Result;
+        //    return roles != null ? string.Join(",", roles) : string.Empty;
+        //}
     }
 }
 
