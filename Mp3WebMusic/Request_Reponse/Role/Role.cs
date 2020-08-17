@@ -9,6 +9,8 @@ namespace Mp3WebMusic.DOMAIN.Request.Role
         public string RoleID { get; set; }
         public string RoleName { get; set; }
         public string  RolePassword{ get; set; }
+        public int IsDelete { get; set; }
+
         public string Message { get; set; }
 
 

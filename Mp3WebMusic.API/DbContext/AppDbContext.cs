@@ -6,7 +6,7 @@ using Mp3WebMusic.DOMAIN;
 
 namespace Mp3WebMusic.API.DbContext
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    public class AppDbContext : IdentityDbContext<ApplicationUser,ApplicationRole,string>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

@@ -20,8 +20,8 @@ namespace Mp3WebMusic.API.Controllers
 
     public class RoleController : Controller
     {
-        private RoleManager<IdentityRole> roleManager;
-        public RoleController(RoleManager<IdentityRole> roleManager)
+        private RoleManager<ApplicationRole> roleManager;
+        public RoleController(RoleManager<ApplicationRole> roleManager)
         {
             this.roleManager = roleManager;
         }
@@ -35,6 +35,8 @@ namespace Mp3WebMusic.API.Controllers
             {
                 RoleID = r.Id,
                 RoleName = r.Name,
+                IsDelete = r.IsDelete
+                
 
             }).ToList();
             return model;
@@ -49,14 +51,18 @@ namespace Mp3WebMusic.API.Controllers
 
                 RoleID = string.Empty
             };
-            var addresult = await roleManager.CreateAsync(new IdentityRole()
+            var addresult = await roleManager.CreateAsync(new ApplicationRole()
             {
-                Name = model.RoleName
+                Name = model.RoleName,
+                IsDelete = 0
+
                 
             });
             if (addresult.Succeeded)
             {
+                
                 result.Message = "Add Role succeeded";
+
             };
 
             return result;
@@ -84,58 +90,84 @@ namespace Mp3WebMusic.API.Controllers
         [Route("/Api/Role/Edit")]
         public async Task<Role> Edit(Role model)
         {
-
-
             var result = new Role()
             {
                 Message = "something went wrong, please try again",
 
                 RoleID = model.RoleID
             };
-            var editrole = await roleManager.UpdateAsync(new IdentityRole
+            try
             {
-                Name = model.RoleName
-            });
-
-
-            if (editrole.Succeeded)
+                var editrole = await roleManager.FindByIdAsync(model.RoleID);
+                if (editrole != null)
+                {
+                    editrole.Name = model.RoleName;
+                    var editResult = await roleManager.UpdateAsync(editrole);
+                    if (editResult.Succeeded)
+                    {
+                        result.Message = "Edit Role succeeded";
+                    };
+                }
+            }
+            catch (System.Exception e)
             {
-                result.Message = "Edit Role succeeded";
-            };
 
+                return result;
+            }
             return result;
-           
+        }
+        [HttpPost]
+        [Route("/Api/Role/Delete/{id}")]
+        public async Task<Role> Delete(string id)
+        {
+            var result = new Role()
+            {
+                Message = "something went wrong, please try again",
 
+                RoleID = id
+                
+            };
+            var deleteRole = await roleManager.FindByIdAsync(id);
+            if (deleteRole != null)
+            {
+                deleteRole.IsDelete = 1;
+                var deleteResult = await roleManager.UpdateAsync(deleteRole);
+                if (deleteResult.Succeeded)
+                {
+                    result.Message = "Delete Role succeeded";
+                };
+            }
+            
+            return result;
 
         }
-        [HttpDelete]
-        [Route("/Api/Role/Delete")]
-        public async Task<Role> Delete(Role model)
+        [HttpPost]
+        [Route("/Api/Role/Restore/{id}")]
+        public async Task<Role> Restore(string id)
         {
 
-
             var result = new Role()
             {
                 Message = "something went wrong, please try again",
 
-                RoleID = model.RoleID
-            };
-            var editrole = await roleManager.DeleteAsync(new IdentityRole
-            {
-                Id=model.RoleID
-            });
+                RoleID = id
 
-
-            if (editrole.Succeeded)
-            {
-                result.Message = "Delete Role succeeded";
             };
+            var deleteRole = await roleManager.FindByIdAsync(id);
+            if (deleteRole != null)
+            {
+                deleteRole.IsDelete = 0;
+                var deleteResult = await roleManager.UpdateAsync(deleteRole);
+                if (deleteResult.Succeeded)
+                {
+                    result.Message = "Restore Role succeeded";
+                };
+            }
 
             return result;
 
-
-
         }
+
 
     }
 }

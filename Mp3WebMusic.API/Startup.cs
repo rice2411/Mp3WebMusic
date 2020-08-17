@@ -43,7 +43,7 @@ namespace Mp3WebMusic.API
             services.AddControllers();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Common.ConnectionString));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddTransient<ITypeRepository, TypeRepository>();
             services.AddTransient<ITypeService, TypeService>();
             services.AddTransient<ISongRepository, SongRepository>();
