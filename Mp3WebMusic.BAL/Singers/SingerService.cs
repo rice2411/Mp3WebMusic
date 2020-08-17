@@ -42,7 +42,10 @@ namespace Mp3WebMusic.BAL.Singers
         {
             return await singerRepository.GetsSingerIsNotDelete();
         }
-
+        public async Task<IList<Singer>> GetsSingerTop4()
+        {
+            return await singerRepository.GetsSingerTop4();
+        }
         public async Task<Singer> Restore(int request)
         {
             return await singerRepository.Restore(request);

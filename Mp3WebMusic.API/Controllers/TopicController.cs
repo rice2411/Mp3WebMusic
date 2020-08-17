@@ -21,6 +21,12 @@ namespace Mp3WebMusic.API.Controllers
             return await topicService.GetsTopicIsDelete();    
         }
         [HttpGet]
+        [Route("/Api/Topic/GetsTopicTop4")]
+        public async Task<IEnumerable<Topic>> GetsTopicTop4()
+        {
+            return await topicService.GetsTopicTop4();
+        }
+        [HttpGet]
         [Route("/Api/Topic/GetsTopicIsNotDelete")]
         public async Task<IEnumerable<Topic>> GetsTopicIsNotDelete()
         {

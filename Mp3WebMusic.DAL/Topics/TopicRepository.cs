@@ -98,7 +98,11 @@ namespace Mp3WebMusic.DAL.Topics
             IList<Topic> topics = SqlMapper.Query<Topic>(connection, "TopicGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return topics;
         }
-
+        public async Task<IList<Topic>> GetsTopicTop4()
+        {
+            IList<Topic> topics = SqlMapper.Query<Topic>(connection, "TopicGetsTop4", commandType: CommandType.StoredProcedure).ToList();
+            return topics;
+        }
         public async Task<Topic> Restore(int request)
         {
             try

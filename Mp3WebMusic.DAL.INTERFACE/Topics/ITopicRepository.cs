@@ -8,7 +8,7 @@ namespace Mp3WebMusic.DAL.INTERFACE
     {
         Task<IList<Topic>> GetsTopicIsNotDelete();
         Task<IList<Topic>> GetsTopicIsDelete();
-      
+        Task<IList<Topic>> GetsTopicTop4();
         Task<Topic> Get(int TopicID); 
         Task<Topic> Delete(int id);
         Task<Topic> Restore(int id);

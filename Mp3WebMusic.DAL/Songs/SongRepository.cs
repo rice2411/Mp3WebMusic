@@ -25,6 +25,11 @@ namespace Mp3WebMusic.DAL.Songs
             IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByUpLoadDay", commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
+        public IList<Song> GetsSongByUpLoaddayTop4()
+        {
+            IList<Song> songs = SqlMapper.Query<Song>(connection, "SongGetsByUpLoadDayTop4", commandType: CommandType.StoredProcedure).ToList();
+            return songs;
+        }
         public IList<Song> GetsSongByType(int typeid)
         {
             DynamicParameters parameters = new DynamicParameters();

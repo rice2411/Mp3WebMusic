@@ -23,7 +23,10 @@ namespace Mp3WebMusic.BAL.Banner
         {
             return bannerRepository.DeleteBanner(id);
         }
-
+        public Banners RestoreBanner(int id)
+        {
+            return bannerRepository.RestoreBanner(id);
+        }
         public Banners EditBanner(Banners request)
         {
             return bannerRepository.EditBanner(request);
@@ -37,6 +40,10 @@ namespace Mp3WebMusic.BAL.Banner
         public IList<Banners> GetsBanner()
         {
             return bannerRepository.GetsBanner();
+        }
+        public IList<Banners> GetsBannerIsNotDelete()
+        {
+            return bannerRepository.GetsBannerIsNotDelete();
         }
     }
 }

@@ -28,6 +28,12 @@ namespace Mp3WebMusic.API.Controllers
             return await singerService.GetsSingerIsNotDelete();
         }
         [HttpGet]
+        [Route("/Api/Singer/GetsSingerTop4")]
+        public async Task<IEnumerable<Singer>> GetsSingerTop4()
+        {
+            return await singerService.GetsSingerTop4();
+        }
+        [HttpGet]
         [Route("/Api/Singer/GetsSingerByID/{id}")]
         public async Task<Singer> Get(int id)
         {

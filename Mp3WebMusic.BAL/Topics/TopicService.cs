@@ -41,7 +41,10 @@ namespace Mp3WebMusic.BAL.Topics
             return await topicRepository.Edit(request);
         }
 
-       
+        public async Task<IList<Topic>> GetsTopicTop4()
+        {
+            return await topicRepository.GetsTopicTop4();
+        }
 
         public async Task<IList<Topic>> GetsTopicIsNotDelete()
         {

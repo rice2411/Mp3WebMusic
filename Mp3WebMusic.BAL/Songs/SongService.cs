@@ -25,6 +25,10 @@ namespace Mp3WebMusic.BAL.Songs
         {
             return songRepository.GetsSongByUpLoadday();
         }
+        public IList<Song> GetsSongByUpLoaddayTop4()
+        {
+            return songRepository.GetsSongByUpLoaddayTop4();
+        }
         public IList<Song> GetsSongByType(int typeid)
         {
             return songRepository.GetsSongByType( typeid);

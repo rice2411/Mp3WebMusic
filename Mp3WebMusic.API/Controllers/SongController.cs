@@ -33,6 +33,12 @@ namespace Mp3WebMusic.API.Controllers
             return songService.GetsSongByUpLoadday();
         }
         [HttpGet]
+        [Route("/Api/Song/GetsSongByUpLoaddayTop4")]
+        public IEnumerable<Song> GetsSongByUpLoaddayTop4()
+        {
+            return songService.GetsSongByUpLoaddayTop4();
+        }
+        [HttpGet]
         [Route("/Api/Song/GetsSongByType/{id}")]
         public IEnumerable<Song> GetsSongByType(int id)
         {

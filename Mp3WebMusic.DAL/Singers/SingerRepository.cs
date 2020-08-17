@@ -104,7 +104,11 @@ namespace Mp3WebMusic.DAL.Singers
             IList<Singer> singers = SqlMapper.Query<Singer>(connection, "SingerGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return singers;
         }
-
+        public async Task<IList<Singer>> GetsSingerTop4()
+        {
+            IList<Singer> singers = SqlMapper.Query<Singer>(connection, "SingerGetsTop4", commandType: CommandType.StoredProcedure).ToList();
+            return singers;
+        }
         public async Task<Singer> Restore(int request)
         {
             try
