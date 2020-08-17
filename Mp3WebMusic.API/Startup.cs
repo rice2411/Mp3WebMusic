@@ -56,6 +56,7 @@ namespace Mp3WebMusic.API
             services.AddTransient<ISingerService, SingerService>();
             services.AddTransient<IBannerRepository, BannerRepository>();
             services.AddTransient<IBannerService, BannerService>();
+
             services.AddSwaggerGen();
         }
 

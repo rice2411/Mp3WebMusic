@@ -8,6 +8,7 @@ namespace Mp3WebMusic.BAL.INTERFACE.Songs
         IList<Song> GetsSongTrending();
         IList<Song> GetsSongIsDelete();
         IList<Song> GetsSongByUpLoadday();
+        IList<Song> GetsSongByUpLoaddayTop4();
         IList<Song> GetsSongByType(int typeid);
         IList<Song> GetsSongByTopic(int topicid);
         IList<Song> GetsSongBySinger(int singerid);

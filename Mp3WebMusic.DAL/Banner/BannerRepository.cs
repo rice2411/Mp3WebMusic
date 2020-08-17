@@ -52,6 +52,25 @@ namespace Mp3WebMusic.DAL.Banner
             }
            
         }
+        public Banners RestoreBanner(int id)
+        {
+            try
+            {
+
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@BannerID", id);
+                Banners song = SqlMapper.Query<Banners>(connection, "BannerRestrore", parameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
+                return song;
+            }
+            catch (Exception e)
+            {
+                return new Banners()
+                {
+                    Message = e.Message
+                };
+            }
+
+        }
 
         public Banners EditBanner(Banners request)
         {
@@ -84,6 +103,11 @@ namespace Mp3WebMusic.DAL.Banner
         public IList<Banners> GetsBanner()
         {
             IList<Banners> songs = SqlMapper.Query<Banners>(connection, "BannerGets", commandType: CommandType.StoredProcedure).ToList();
+            return songs;
+        }
+        public IList<Banners> GetsBannerIsNotDelete()
+        {
+            IList<Banners> songs = SqlMapper.Query<Banners>(connection, "BannerGetsIsNotDelete", commandType: CommandType.StoredProcedure).ToList();
             return songs;
         }
     }

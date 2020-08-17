@@ -22,6 +22,12 @@ namespace Mp3WebMusic.API.Controllers
         {
             return bannerService.GetsBanner();
         }
+        [HttpGet]
+        [Route("/Api/Banner/GetsIsNotDelete")]
+        public IEnumerable<Banners> GetsBannerIsNotDelete()
+        {
+            return bannerService.GetsBannerIsNotDelete();
+        }
         [HttpPost]
         [Route("/Api/Banner/AddBanner")]
         public Banners AddBanner(Banners request)
@@ -34,11 +40,17 @@ namespace Mp3WebMusic.API.Controllers
         {
             return bannerService.EditBanner(request);
         }
-        [HttpDelete]
+        [HttpPost]
         [Route("/Api/Banner/DeleteBanner/{id}")]
         public Banners DeleteBanner(int id)
         {
             return bannerService.DeleteBanner(id);
+        }
+        [HttpPost]
+        [Route("/Api/Banner/RestoreBanner/{id}")]
+        public Banners RestoreBanner(int id)
+        {
+            return bannerService.RestoreBanner(id);
         }
         [HttpGet]
         [Route("/Api/Banner/GetBannerByID/{id}")]
