@@ -9,7 +9,9 @@ namespace Mp3WebMusic.DOMAIN.Request.Role
        
         public string RoleName { get; set; }
         public string  RolePassword{ get; set; }
+        public bool IsDelete { get; set; }
        
+
 
     }
 }
