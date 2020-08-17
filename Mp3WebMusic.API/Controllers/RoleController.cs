@@ -35,8 +35,7 @@ namespace Mp3WebMusic.API.Controllers
             {
                 RoleID = r.Id,
                 RoleName = r.Name,
-                IsDelete = r.IsDelete
-                
+                IsDelete = r.IsDelete                
 
             }).ToList();
             return model;
